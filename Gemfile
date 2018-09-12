@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.4'
+ruby '2.5.1'
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -16,6 +16,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+gem 'slim'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
