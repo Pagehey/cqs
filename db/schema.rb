@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_104230) do
+ActiveRecord::Schema.define(version: 2018_09_13_092303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 2018_09_13_104230) do
     t.datetime "end_date"
     t.integer "price"
     t.string "number_of_places"
-    t.string "out_of_places"
+    t.string "category"
+    t.boolean "out_of_places", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,8 +36,6 @@ ActiveRecord::Schema.define(version: 2018_09_13_104230) do
     t.integer "phone_number"
     t.integer "number_of_places_wanted"
     t.text "message"
-    t.text "comment"
-    t.string "status", default: "en attente"
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_09_13_104230) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "role"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
