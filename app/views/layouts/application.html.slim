@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Ceux Qui Sèment - Association de permaculture guérandaise
+    = csrf_meta_tags
+    = favicon_link_tag
+    = stylesheet_link_tag 'application', media: 'all'
+  body
+    = render 'shared/flashes'
+    = yield
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
