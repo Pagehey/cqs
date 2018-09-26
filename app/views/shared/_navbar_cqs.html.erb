@@ -1,0 +1,31 @@
+<div class="navbar-cqs">
+  <div class="navbar-left navigation hidden-xs hidden-sm">
+    <ul>
+      <li><%= link_to "L'association", '#' %></li>
+      <li><%= link_to "L'agenda", '#' %></li>
+    </ul>
+  </div>
+  <div class="navbar-logo">
+    <%= link_to root_path do %>
+      <%= image_tag "logo-full.png", alt: "Ceux-qui-sèment permaculture logo", class: "logo" %>
+    <% end %>
+  </div>
+  <div class="navbar-right navigation hidden-xs hidden-sm">
+    <ul>
+      <li><%= link_to "La permaculture", '#' %></li>
+      <li><%= link_to "L'Écoasis", '#' %></li>
+    </ul>
+  </div>
+
+  <div class="navbar-wagon-item hidden-md hidden-lg fixed-right">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">L'association</a></li>
+        <li><a href="#">La permaculture</a></li>
+        <li><a href="#">L'agenda</a></li>
+        <li><a href="#">L'Ecoasis</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
