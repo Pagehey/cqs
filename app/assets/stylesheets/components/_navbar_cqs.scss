@@ -1,0 +1,40 @@
+.navbar-cqs {
+  height: 90px;
+  padding: 0 30px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 95px;
+  margin: 55px 70px 0px 70px;
+}
+
+.navigation {
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    li {
+      display: inline;
+    }
+  }
+  a {
+    color: $light-black !important;
+    text-decoration: none;
+    transition: all ease .4s;
+    &:hover {
+      color: $light-blue !important;
+    }
+  }
+}
+
+.fixed-right {
+  position: absolute;
+  right: 30px;
+}
