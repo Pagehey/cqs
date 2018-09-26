@@ -1,0 +1,31 @@
+.admin-header {
+  position: relative;
+  height: 90px;
+  background-color: white;
+  h1 {
+    color: #4E4E4E;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    left: 150px;
+
+  }
+}
+
+.admin-logo {
+  position: absolute;
+  top: 7px;
+  left: 25px;
+  height: 75px;
+}
+
+.admin-action {
+  position: absolute;
+  left: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h3 {
+    font-weight: lighter;
+  }
+}
