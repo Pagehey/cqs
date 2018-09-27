@@ -1,1 +1,71 @@
 // Specific CSS for your home-page
+.banner {
+  height: 600px;
+  width: 100vw;
+  margin-top: -90px;
+  border-bottom-left-radius: 210% 15%;
+  border-bottom-right-radius: 210% 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  h1 {
+    width: 960px;
+    text-align: center;
+  }
+}
+
+.background-image {
+  background-image: linear-gradient(rgba(218, 91, 89, 0.15), rgba(218, 91, 89, 0.15)), image-url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.home-bullet-points {
+  padding: 50px 30px;
+}
+
+.home-bullet-points-title {
+  h2 {
+    margin: 0;
+    span {
+      padding: 0 10px;
+      box-shadow: inset 0 -15px 0 0 $light-blue;
+    }
+  }
+  margin-bottom: 100px;
+}
+
+.bullet-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bullet-point-picto {
+  height: 100px;
+  width: 360px;
+  .picto {
+    position: relative;
+    height: 100px;
+    img {
+      position: absolute;
+      top: 15px;
+      left: 157px;
+    }
+    .picto-back {
+      position: absolute;
+      height: 82px;
+      width: 82px;
+      border-radius: 50%;
+      background-color: $sand;
+      left: 139px;
+    }
+  }
+}
+
+.bullet-point-content {
+  padding: 0px 30px;
+}
