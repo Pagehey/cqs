@@ -3,7 +3,7 @@
   height: 90px;
   background-color: white;
   h1 {
-    color: #4E4E4E;
+    color: $light-black;
     margin: 0;
     position: absolute;
     top: 20px;
@@ -19,13 +19,50 @@
   height: 75px;
 }
 
-.admin-action {
-  position: absolute;
-  left: 600px;
+.admin-actions {
+  height: 60px;
+  width: 300px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   h3 {
+    margin: 0;
     font-weight: lighter;
+    transition: .2s;
+    color: $light-black;
+    &:hover {
+      cursor: pointer;
+      color: black;
+    }
+  }
+}
+
+.participations {
+  position: relative;
+  height: calc(100vh - 90px - 60px);
+  overflow-y: scroll;
+  position: sticky;
+  border-left: 1px solid hsla(0, 50%, 0%, 0.2);
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: $light-black;
+  }
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   height: 85%;
+  //   width: 2px;
+  //   background-color: hsla(0, 50%, 0%, 0.2);
+  //   top: 10%;
+  //   left: -1px;
+  // }
+}
+
+.event-actions {
+  display: flex;
+  justify-content: center;
+  a {
+    margin: 0 20px;
   }
 }
