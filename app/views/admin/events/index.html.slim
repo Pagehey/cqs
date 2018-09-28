@@ -1,2 +1,20 @@
-- 3.times do
-  = render 'shared/participation', participation: Event.first.participations.first
+.admin-header
+  = link_to root_path do
+    = image_tag 'logo-full.png', class: 'admin-logo'
+  h1 Évènements
+.admin-actions
+  h3#gerer.underline Gérer
+  h3#creer Créer
+.container-fluid
+  .row
+    .col-xs-7
+
+    .col-xs-5
+      .participations
+        h2 Event
+        .event-actions
+          = link_to 'Modifier', root_path, class: 'btn btn-success'
+          = link_to 'Clôturer', root_path, class: 'btn btn-warning'
+          = link_to 'Supprimer', root_path, class: 'btn btn-danger'
+        - 5.times do
+          =render 'shared/participation', participation: Event.first.participations.first
