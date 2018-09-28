@@ -6,9 +6,11 @@
   background-color: white;
   border-radius: 3px;
   margin-bottom: 30px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .1);
+  position: relative;
   .vertical-card-image {
     width: 100%;
-    height: 160px;
+    height: 240px;
     background-image: asset-url('event.jpg');
     background-size: cover;
     border-radius: 3px 3px 0 0;
@@ -19,15 +21,16 @@
   }
   .vertical-card-content {
     padding: 8px 22px 20px 22px;
+    position: relative;
     h4 {
       font-size: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 21px;
     }
     .vertical-card-date {
       display: flex;
       align-items: center;
       font-size: 14px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       .calendar-icon {
         height: 30px !important;
         width: 30px !important;
@@ -46,6 +49,35 @@
         font-size: 13px;
         color: $dark-gray;
       }
+    }
+  }
+}
+
+.ribbon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50px;
+  text-align: center;
+  right: 10px;
+  top: -15px;
+  font-family: $headers-font;
+  .ribbon-top {
+    background-color: $main-red;
+    width: 100%;
+    color: white;
+    height: 20px;
+    font-size: 14px;
+  }
+  .ribbon-bottom {
+    width: 100%;
+    background-color: white;
+    font-weight: bold;
+    font-size: 23px;
+    p {
+      margin-bottom: 0;
     }
   }
 }

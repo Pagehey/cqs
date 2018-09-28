@@ -3,10 +3,10 @@
   </div>
   <div class="ribbon">
     <div class="ribbon-top">
-
+      <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
     </div>
     <div class="ribbon-bottom">
-
+      <p><%= event.start_date.day %></p>
     </div>
   </div>
   <div class="colored-block">
@@ -20,6 +20,6 @@
       </div>
       <p>Mercredi 26 septembre 2018 | 10h - 17h</p>
     </div>
-    <%= link_to "Plus d'infos", event_path(event), class: "underline" %>
+    <%= link_to "Plus d'infos", event_path(event), class: "underline-bis link bold" %>
   </div>
 </div>
