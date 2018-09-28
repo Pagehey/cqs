@@ -25,7 +25,18 @@ event = Event.create! title: "Default Event",
                       end_date: DateTime.now + 1,
                       price: 10,
                       number_of_places: 8,
-                      category: "Formation"
+                      category: "Formation",
+                      photo: File.open(Rails.root.join("db/fixtures/events/event1pic.jpg"))
+
+event2 = Event.create! title: "Default Event 2",
+                      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
+                      location: "Ecoasis, Guérande",
+                      start_date: DateTime.now,
+                      end_date: DateTime.now + 1,
+                      price: 0,
+                      number_of_places: 12,
+                      category: "Formation",
+                      photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
 participation = Participation.new first_name: "Luke",
                                   last_name: "Skywalker",
@@ -34,9 +45,17 @@ participation = Participation.new first_name: "Luke",
                                   number_of_places_wanted: 2,
                                   message: "J'aimerai planter des choux sur Tatooine et c'est un peu aride..."
 
+participation2 = Participation.new first_name: "Saruman",
+                                  last_name: "Le Blanc",
+                                  email: "saruRoxXxor@mail.com",
+                                  phone_number: 1234567890,
+                                  number_of_places_wanted: 1,
+                                  message: "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla"
+
 participation.event = event
+participation2.event = event2
 
 participation.save!
-
+participation2.save!
 
 puts "Finished!"
