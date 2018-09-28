@@ -1,6 +1,8 @@
 .vertical-card {
-  width: 75%;
-  // height: 370px;
+  width: 100%;
+  max-width: 255px;
+  min-width: 255px;
+  margin: auto;
   background-color: white;
   border-radius: 3px;
   margin-bottom: 30px;
