@@ -1,12 +1,13 @@
-<div class="banner background-image flex space-around">
+<div class="banner background-image">
+  <%= image_tag "banner.png", alt: "alttext" %>
   <h1>Association de promotion de la <span class="green">permaculture</span> sur la Presqu'ile guérandaise</h1>
 </div>
 <div class="home-bullet-points">
   <div class="home-bullet-points-title">
-    <h2 class="text-center"><span>Transition écologique et citoyenne</span></h2>
+    <h2 class="text-center"><span class="underline">Transition écologique et citoyenne</span></h2>
   </div>
   <div class="container">
-    <div class="row">
+    <div class="row bullet-points">
       <div class="col-xs-12 col-md-4 bullet-point">
         <div class="bullet-point-picto text-center">
           <div class="picto">
@@ -22,7 +23,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptatem, nemo vero natus quisquam officiis similique quo itaque nam cupiditate deserunt ab iste ipsa laboriosam autem doloribus repellendus dolorem, fugit.</p>
         </div>
       </div>
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-md-4 bullet-point">
         <div class="bullet-point-picto text-center">
           <div class="picto">
             <div class="picto-back"></div>
@@ -37,7 +38,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quos, suscipit perspiciatis esse id consequatur fugiat voluptas ullam sed in sit ipsum rem aut ad pariatur et soluta repudiandae ipsam.</p>
         </div>
       </div>
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-md-4 bullet-point">
         <div class="bullet-point-picto text-center">
           <div class="picto">
             <div class="picto-back"></div>
@@ -56,6 +57,19 @@
   </div>
 </div>
 <div class="home-agenda">
-
+  <%= image_tag "home.png", alt: "Permaculture-image-ronde", class: "hidden-xs hidden-sm" %>
+  <div class="container-cqs home-agenda-box">
+    <h2><span class="underline">Agenda 🌱</span></h2>
+    <p>
+      L’association organise des <strong>événements</strong> tout au long de l’année, d’initiation et d’introduction à la permaculture et à ses <strong>concepts</strong>
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/vertical_card', event: Event.first %>
+      </div>
+    </div>
+  </div>
 </div>
 
