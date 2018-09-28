@@ -83,7 +83,7 @@
   position: relative;
   img {
     position: absolute;
-    top: -45%;
+    top: -20%;
     right: 4%;
   }
 }
@@ -93,11 +93,29 @@
   h2 {
     color: $light-black;
     font-size: 52px;
+    min-width: 252px;
+
   }
   p {
     padding-top: 50px;
-    width: 455px;
     color: $light-black;
     font-size: 22px;
+    max-width: 480px;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .home-agenda-box {
+    padding: 50px 0px;
+    h2 {
+      text-align: center;
+
+    }
+
+    p {
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 }
