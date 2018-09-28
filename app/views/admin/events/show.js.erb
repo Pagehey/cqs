@@ -1,0 +1,10 @@
+function showParticipations(innerHTML) {
+  const participations = document.querySelector('.participations');
+  participations.innerHTML = innerHTML;
+}
+
+showParticipations(
+  "<% @event.participations.each do |participation| %>\
+    <%= j render 'shared/participation', participation: participation %>\
+  <% end %>"
+  )
