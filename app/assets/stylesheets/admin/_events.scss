@@ -43,7 +43,9 @@
   }
 }
 .participations {
-  height: calc(100vh - 90px - 60px);
+}
+.sticky-participations {
+  height: calc(100vh);
   overflow-y: scroll;
   position: sticky !important;
   top: 0;
@@ -53,19 +55,9 @@
     text-align: center;
     color: $light-black;
   }
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   height: 85%;
-  //   width: 2px;
-  //   background-color: hsla(0, 50%, 0%, 0.2);
-  //   top: 10%;
-  //   left: -1px;
-  // }
 }
 
 .admin-events {
-  position: relative;
 }
 
 .event-actions {

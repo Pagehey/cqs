@@ -20,6 +20,11 @@
       </div>
       <p>Mercredi 26 septembre 2018 | 10h - 17h</p>
     </div>
+    <% if event.out_of_places == false %>
+      <p style="color: green;">Inscriptions ouvertes</p>
+    <% else %>
+      <p style="color: red;">Incriptions fermées</p>
+    <% end %>
     <%= link_to "Voir les messages", admin_event_path(event), class: "underline-bis link bold", remote: true %>
   </div>
 </div>
