@@ -50,7 +50,11 @@ participation2 = Participation.new first_name: "Saruman",
                                   email: "saruRoxXxor@mail.com",
                                   phone_number: 1234567890,
                                   number_of_places_wanted: 1,
-                                  message: "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla"
+                                  message: "blablablablablablabla\
+                                  blablablablablablablablablablablabla\
+                                  # blablablablablablablablablablabla
+                                  blablablablablablablablablablablablablablabla\
+                                  blablablablablablablablabla"
 
 participation.event = event
 participation2.event = event2

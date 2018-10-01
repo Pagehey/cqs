@@ -8,10 +8,15 @@
   h3#creer Créer
 .container-fluid
   .row
-    .col-xs-7
-
-    .col-xs-5
-      .participations
+    .col-xs-12.col-lg-7
+      .admin-events
+        .row
+          - 3.times do
+            - @events.each do |event|
+              .col-xs-12.col-lg-6.col-xl-4
+                = render 'shared/admin_event_card', event: event
+    .col-xs-12.col-lg-5 *{ style: 'overflow-y: visible; position: relative' }
+      .participations.sticky-top
         h2 Event
         .event-actions
           = link_to 'Modifier', root_path, class: 'btn btn-success'

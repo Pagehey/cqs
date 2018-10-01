@@ -1,0 +1,25 @@
+<div class="vertical-card">
+  <div class="vertical-card-image">
+  </div>
+  <div class="ribbon">
+    <div class="ribbon-top">
+      <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
+    </div>
+    <div class="ribbon-bottom">
+      <p><%= event.start_date.day %></p>
+    </div>
+  </div>
+  <div class="colored-block">
+
+  </div>
+  <div class="vertical-card-content">
+    <h4><%= event.title %></h4>
+    <div class="vertical-card-date">
+      <div class="calendar-icon">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <p>Mercredi 26 septembre 2018 | 10h - 17h</p>
+    </div>
+    <%= link_to "Voir les messages", admin_event_path(event), class: "underline-bis link bold", remote: true %>
+  </div>
+</div>
