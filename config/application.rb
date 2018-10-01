@@ -22,6 +22,6 @@ module Cqs
     # the framework and any gems in your application.
     config.i18n.default_locale = :fr
 
-    config.action_view.embed_authenticity_token_in_remote_forms = true
+    # config.action_view.embed_authenticity_token_in_remote_forms = true # not needed if no forms with AJAX ?
   end
 end

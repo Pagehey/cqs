@@ -7,7 +7,7 @@
     margin: 0;
     position: absolute;
     top: 20px;
-    left: 150px;
+    left: 120px;
   }
   .admin-logout {
     color: $main-red;
@@ -42,8 +42,21 @@
     }
   }
 }
-.participations {
+
+.admin-events {
 }
+
+.event-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  a {
+    margin: 0 20px;
+  }
+}
+
+.participations {
+ }
 .sticky-participations {
   height: calc(100vh);
   overflow-y: scroll;
@@ -56,14 +69,32 @@
     color: $light-black;
   }
 }
-
-.admin-events {
+.out-of-places {
+  text-align: center;
+  p {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    color: hsla(0, 0, 0, 0.2);
+    &:hover {
+      color: $yellow;
+      font-weight: bold;
+    }
+  }
 }
 
-.event-actions {
-  display: flex;
-  justify-content: center;
-  a {
-    margin: 0 20px;
+// hide participations left-border on small screens
+@media screen and (max-width: 1199px) {
+  .sticky-participations {
+    border-left: none;
   }
+}
+
+.inscriptions-opened {
+  color: $main-green;
+}
+.inscriptions-closed {
+  color: $main-red;
 }

@@ -13,15 +13,8 @@
         .row
           - 3.times do
             - @events.each do |event|
-              .col-xs-12.col-lg-6.col-xl-4
+              .col-xs-12.col-sm-6.col-xl-4
                 = render 'shared/admin_event_card', event: event
     .col-xs-12.col-lg-5
       .participations
-        .sticky-participations
-          h2 Event
-          .event-actions
-            = link_to 'Modifier', root_path, class: 'btn btn-success'
-            = link_to 'Clôturer', root_path, class: 'btn btn-warning'
-            = link_to 'Supprimer', root_path, class: 'btn btn-danger'
-          - 5.times do
-            =render 'shared/participation', participation: Event.first.participations.first
+            =render 'shared/participations', event: Event.last
