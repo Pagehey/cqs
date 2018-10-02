@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.datetime :start_date
       t.datetime :end_date
       t.integer :price
-      t.string :number_of_places
+      t.integer :number_of_places
       t.string :category
       t.boolean :out_of_places, default: false
 

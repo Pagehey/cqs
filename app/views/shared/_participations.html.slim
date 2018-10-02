@@ -14,24 +14,26 @@
       = link_to '(clôturer)', admin_event_close_path(event), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
   .event-actions
     - unless event.start_date < Date.today
-      = link_to 'Modifier', root_path, class: 'btn btn-success'
-      = link_to 'Supprimer', root_path, class: 'btn btn-danger'
+      = link_to 'Modifier', edit_admin_event_path(event), class: 'btn btn-success'
+      = link_to 'Supprimer', admin_event_path(event), class: 'btn btn-danger', method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer l'événement ?" }
 
 
-  - 10.times do
-    - event.participations.each do |participation|
-      .participation-box
-        .participation-infos
-          h4 #{participation.first_name} #{participation.last_name}
-          p souhaite réserver #{pluralize participation.number_of_places_wanted, "place", "places"}
+  .row
+    - 10.times do
+      - event.participations.each do |participation|
+        .col-xs-12.col-sm-6.col-lg-12
+          .participation-box
+            .participation-infos
+              h4 #{participation.first_name} #{participation.last_name}
+              p souhaite réserver #{pluralize participation.number_of_places_wanted, "place", "places"}
 
-        .participation-contact
-          p.phone_number
-            i.fas.fa-phone
-            = participation.phone_number
-          p.email
-            i.fas.fa-at
-            = participation.email
+            .participation-contact
+              p.phone_number
+                i.fas.fa-phone
+                = participation.phone_number
+              p.email
+                i.fas.fa-at
+                = participation.email
 
-        .participation-message
-          p = participation.message
+            .participation-message
+              p = participation.message

@@ -1,5 +1,15 @@
 fr:
   activerecord:
+    attributes:
+      event:
+        title: 'Titre'
+        location: 'Lieu'
+        price: 'Prix'
+        number_of_places: 'Places'
+        category: 'Catégorie'
+        description: 'Description'
+        start_date: 'Début'
+        end_date: 'Fin'
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'

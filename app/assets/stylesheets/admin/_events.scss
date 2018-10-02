@@ -97,5 +97,10 @@
   .sticky-participations {
     border-left: none;
   }
+  .admin-events {
+    max-height: 600px;
+    overflow-y: scroll;
+    border-bottom: 1px solid hsla(0, 50%, 0%, 0.2);
+  }
 }
 

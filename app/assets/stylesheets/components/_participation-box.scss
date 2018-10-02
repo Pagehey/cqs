@@ -6,6 +6,11 @@
   background-color: white;
   border-radius: 2px;
 }
+@media screen and (max-width: 949px) {
+  .participation-box {
+    width: 370px;
+  }
+}
 
 .participation-infos {
   position: relative;

@@ -1,6 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: [:show, :edit, :update]
 
   def index
     @events = Event.all.order(start_date: :desc)
@@ -15,6 +15,28 @@ class Admin::EventsController < ApplicationController
 
   def new
     @event = Event.new
+  end
+
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      flash[:notice] = "Événement créé avec succès."
+      redirect_to admin_events_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      flash[:notice] = "Événement modifié avec succès."
+      redirect_to admin_events_path
+    else
+      render :edit
+    end
   end
 
   def close
@@ -41,5 +63,18 @@ class Admin::EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def event_params
+    params.require(:event).permit(:title,
+                                  :location,
+                                  :price,
+                                  :number_of_places,
+                                  :category,
+                                  :photo,
+                                  :description,
+                                  :start_date,
+                                  :end_date
+                                  )
   end
 end
