@@ -68,11 +68,20 @@
     text-align: center;
     color: $light-black;
   }
+  h3 {
+    padding-top: 20px;
+    margin: 20px auto 0 auto;
+    border-top: 1px solid hsla(0, 50%, 0%, 0.2);
+    text-align: center;
+    color: $light-black;
+    width: 350px;
+  }
 }
 .out-of-places {
   text-align: center;
   p {
     margin: 0;
+    font-size: 22px;
   }
   a {
     text-decoration: none;
@@ -104,3 +113,12 @@
   }
 }
 
+.new-event {
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .new-event{
+    height: calc(100vh - 200px);
+  }
+}
