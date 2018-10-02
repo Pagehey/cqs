@@ -15,7 +15,8 @@
   .event-actions
     - unless event.start_date < Date.today
       = link_to 'Modifier', edit_admin_event_path(event), class: 'btn btn-success'
-      = link_to 'Supprimer', admin_event_path(event), class: 'btn btn-danger', method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer l'événement ?" }
+      input.btn.btn-danger type="button" id="btn-delete-alert" value="Supprimer"
+      = link_to 'Supprimer', admin_event_path(event), class: 'hidden', method: :delete, id: 'btn-delete'
 
   h3 Demandes d'inscription
   .container-fluid

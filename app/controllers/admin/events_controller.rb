@@ -1,6 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :edit, :update]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.all.order(start_date: :desc)
@@ -37,6 +37,11 @@ class Admin::EventsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    flash[:notice] = "Événement #{@event.id} supprimé avec succès."
+    redirect_to admin_events_path
   end
 
   def close
