@@ -10,14 +10,16 @@
   = link_to new_admin_event_path do
     h3#creer Créer
 .container-fluid
-  .row
-    .col-xs-12.col-lg-7
-      .admin-events
-        .row
-          - 3.times do
+  - if @events.empty?
+    h2.text-center Il n'y a pas d'événement programmé pour le moment.
+  - else
+    .row
+      .col-xs-12.col-lg-7
+        .admin-events
+          .row
             - @events.each do |event|
               .col-xs-12.col-sm-6.col-xl-4
                 = render 'shared/admin_event_card', event: event
-    .col-xs-12.col-lg-5
-      .participations
-            =render 'shared/participations', event: Event.last
+      .col-xs-12.col-lg-5
+        .participations
+          =render 'shared/participations', event: Event.last

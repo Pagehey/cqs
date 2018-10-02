@@ -40,7 +40,8 @@ class Admin::EventsController < ApplicationController
   end
 
   def destroy
-    flash[:notice] = "Événement #{@event.id} supprimé avec succès."
+    flash[:notice] = "Événement \"#{@event.title}\" supprimé avec succès."
+    @event.destroy
     redirect_to admin_events_path
   end
 
