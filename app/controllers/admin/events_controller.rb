@@ -13,6 +13,10 @@ class Admin::EventsController < ApplicationController
     end
   end
 
+  def new
+    @event = Event.new
+  end
+
   def close
     @event = Event.find(params[:event_id])
     @event.out_of_places = true

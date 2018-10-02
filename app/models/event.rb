@@ -10,4 +10,5 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :category, presence: true
+  validates :number_of_places, presence: true
 end

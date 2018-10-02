@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
 
   namespace :admin do
-    resources :events, only: [:index, :show] do
+    resources :events, only: [:index, :show, :new, :create] do
       get 'close' , to: 'events#close'
       get 'open'  , to: 'events#open'
     end

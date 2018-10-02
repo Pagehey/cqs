@@ -85,6 +85,13 @@
   }
 }
 
+.inscriptions-opened {
+  color: $main-green;
+}
+.inscriptions-closed {
+  color: $main-red;
+}
+
 // hide participations left-border on small screens
 @media screen and (max-width: 1199px) {
   .sticky-participations {
@@ -92,9 +99,3 @@
   }
 }
 
-.inscriptions-opened {
-  color: $main-green;
-}
-.inscriptions-closed {
-  color: $main-red;
-}

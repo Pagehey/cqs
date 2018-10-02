@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+.admin-header
+  = link_to root_path do
+    = image_tag 'logo-full.png', class: 'admin-logo'
+  h1 Évènements
+  = link_to 'Se déconnecter', destroy_user_session_path, class: 'admin-logout', method: :delete
+.admin-actions
+  = link_to admin_events_path do
+    h3#gerer Gérer
+  = link_to new_admin_event_path do
+    h3#creer.underline Créer
+.new-event
+  .container
+      = simple_form_for @event do |f|
+        .row
+          .col-xs-12.col-sm-6
+            .col-xs-12
+              = f.input :title, label: "Titre"
+            .col-xs-6
+              = f.input :location, label: "Lieu"
+            .col-xs-6
+              = f.input :price, label: "Prix"
+            .col-xs-6
+              = f.input :number_of_places, label: "Places disponibles"
+            .col-xs-6
+              = f.input :category, label: "Catégorie"
+            .col-xs-6
+              = f.input :photo, label: "Image"
+          .col-xs-12.col-sm-6
+            .col-xs-12
+              = f.input :description
+            .col-xs-6
+              = f.input :start_date, label: "Début", as: :string, required: false, input_html: {class: "datepicker"}
+            .col-xs-6
+              = f.input :end_date, label: "Fin", as: :string, required: false, input_html: {class: "datepicker"}
+          .col-xs-6.col-xs-offset-6
+            = f.submit
+
