@@ -3,11 +3,13 @@ class Event < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  validates :title, presence: true, uniqueness: true
-  validates :description, presence: true
-  validates :location, presence: true
-  validates :price, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates :category, presence: true
+  validates :title, presence: { message: :blank}, uniqueness: { message: :exclusion}
+  validates :description, presence: { message: :blank}
+  validates :location, presence: { message: :blank}
+  validates :price, presence: { message: :blank}
+  validates :start_date, presence: { message: :blank}
+  validates :end_date, presence: { message: :blank}
+  validates :category, presence: { message: :blank}
+  validates :number_of_places, presence: { message: :blank}
+  validates :photo, presence: { message: :blank}
 end

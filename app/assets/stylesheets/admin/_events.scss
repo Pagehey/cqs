@@ -7,8 +7,13 @@
     margin: 0;
     position: absolute;
     top: 20px;
-    left: 150px;
-
+    left: 120px;
+  }
+  .admin-logout {
+    color: $main-red;
+    position: absolute;
+    right: 30px;
+    top: 10px;
   }
 }
 
@@ -22,6 +27,7 @@
 .admin-actions {
   height: 60px;
   width: 300px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -37,32 +43,64 @@
   }
 }
 
-.participations {
-  position: relative;
-  height: calc(100vh - 90px - 60px);
-  overflow-y: scroll;
-  position: sticky;
-  border-left: 1px solid hsla(0, 50%, 0%, 0.2);
-  h2 {
-    margin-bottom: 30px;
-    text-align: center;
-    color: $light-black;
-  }
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   height: 85%;
-  //   width: 2px;
-  //   background-color: hsla(0, 50%, 0%, 0.2);
-  //   top: 10%;
-  //   left: -1px;
-  // }
+.admin-events {
 }
 
 .event-actions {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   a {
     margin: 0 20px;
   }
 }
+
+.participations {
+ }
+.sticky-participations {
+  height: calc(100vh);
+  overflow-y: scroll;
+  position: sticky !important;
+  top: 0;
+  border-left: 1px solid hsla(0, 50%, 0%, 0.2);
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: $light-black;
+  }
+}
+.out-of-places {
+  text-align: center;
+  p {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    color: hsla(0, 0, 0, 0.2);
+    &:hover {
+      color: $yellow;
+      font-weight: bold;
+    }
+  }
+}
+
+.inscriptions-opened {
+  color: $main-green;
+}
+.inscriptions-closed {
+  color: $main-red;
+}
+
+// hide participations left-border on small screens
+@media screen and (max-width: 1199px) {
+  .sticky-participations {
+    border-left: none;
+  }
+  .admin-events {
+    max-height: 600px;
+    overflow-y: scroll;
+    border-bottom: 1px solid hsla(0, 50%, 0%, 0.2);
+  }
+}
+

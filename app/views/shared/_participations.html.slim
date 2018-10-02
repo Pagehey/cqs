@@ -1,0 +1,39 @@
+.sticky-participations
+  h2 = event.title
+
+  .out-of-places id = "event-#{event.id}-details-status"
+    - if event.start_date < Date.today
+      p.inscriptions-closed Événement passé
+    - elsif event.out_of_places
+      p.inscriptions-closed
+        | Inscriptions fermées
+      = link_to '(rouvrir)', admin_event_open_path(event), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
+    - else
+      p.inscriptions-opened
+        | Inscriptions ouvertes
+      = link_to '(clôturer)', admin_event_close_path(event), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
+  .event-actions
+    - unless event.start_date < Date.today
+      = link_to 'Modifier', edit_admin_event_path(event), class: 'btn btn-success'
+      = link_to 'Supprimer', admin_event_path(event), class: 'btn btn-danger', method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer l'événement ?" }
+
+
+  .row
+    - 10.times do
+      - event.participations.each do |participation|
+        .col-xs-12.col-sm-6.col-lg-12
+          .participation-box
+            .participation-infos
+              h4 #{participation.first_name} #{participation.last_name}
+              p souhaite réserver #{pluralize participation.number_of_places_wanted, "place", "places"}
+
+            .participation-contact
+              p.phone_number
+                i.fas.fa-phone
+                = participation.phone_number
+              p.email
+                i.fas.fa-at
+                = participation.email
+
+            .participation-message
+              p = participation.message

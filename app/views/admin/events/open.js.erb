@@ -1,0 +1,9 @@
+function openEvent(id) {
+  const eventCardStatus   = document.getElementById('event-' + id + '-status')
+  const eventDetailsSatus = document.getElementById('event-' + id + '-details-status')
+  eventCardStatus.innerHTML   = '<p class="inscriptions-opened">Incriptions ouvertes</p>'
+  eventDetailsSatus.innerHTML = '<p class="inscriptions-opened">Inscriptions ouvertes</p>\
+<a data-confirm="Êtes-vous sûr ?" data-remote="true" href="/admin/events/15/close">(clôturer)</a>'
+}
+
+openEvent('<%= @event.id %>');

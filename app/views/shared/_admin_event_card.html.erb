@@ -1,0 +1,34 @@
+<div class="vertical-card">
+  <div class="vertical-card-image" style="background-image: url('<%= cl_image_path event.photo, width: 600, crop: :scale %>')">
+  </div>
+  <div class="ribbon">
+    <div class="ribbon-top">
+      <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
+    </div>
+    <div class="ribbon-bottom">
+      <p><%= event.start_date.day %></p>
+    </div>
+  </div>
+  <div class="colored-block">
+
+  </div>
+  <div class="vertical-card-content">
+    <h4><%= event.title %></h4>
+    <div class="vertical-card-date">
+      <div class="calendar-icon">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <p>Mercredi 26 septembre 2018 | 10h - 17h</p>
+    </div>
+    <div id="event-<%= event.id %>-status">
+      <% if event.start_date < Date.today %>
+        <p class="inscriptions-closed">Événement passé</p>
+      <% elsif event.out_of_places == false %>
+        <p class="inscriptions-opened">Inscriptions ouvertes</p>
+      <% else %>
+        <p class="inscriptions-closed">Incriptions fermées</p>
+      <% end %>
+    </div>
+    <%= link_to "Voir les messages", admin_event_path(event), class: "underline-bis link bold", remote: true %>
+  </div>
+</div>

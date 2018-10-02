@@ -3,8 +3,4 @@ function showParticipations(innerHTML) {
   participations.innerHTML = innerHTML;
 }
 
-showParticipations(
-  "<% @event.participations.each do |participation| %>\
-    <%= j render 'shared/participation', participation: participation %>\
-  <% end %>"
-  )
+showParticipations("<%= j render 'shared/participations', event: @event %>")

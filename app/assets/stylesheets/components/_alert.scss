@@ -1,15 +1,22 @@
-/* -------------------------------------
- * Your CSS code for flash notices and alerts
-* ------------------------------------- */
-
 .alert {
+  position: absolute;
+  top: 30px;
   margin: 0;
   text-align: center;
   color: white;
+  z-index: 3000;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  transition: all 1s ease-out;
+  left: -600px;
+}
+.alert-slide {
+  left: 15px !important;
+  transition: all 1s ease-out;
 }
 .alert-info {
-  background: $green;
+  background: $main-green;
 }
 .alert-warning {
-  background: $red;
+  background: $main-red;
 }

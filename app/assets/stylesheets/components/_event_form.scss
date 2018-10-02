@@ -1,0 +1,22 @@
+.submit-btn {
+  text-align: center;
+}
+.event-submit {
+  width: 60%;
+}
+.basic-input {
+  &:focus {
+    border: none;
+    box-shadow: 2px 2px 5px $main-green;
+    transform: scale(1.05);
+  }
+  transition: .2s;
+  border: none;
+  box-shadow: 2px 2px 5px hsla(0, 0, 0, 0.2);
+  &[readonly] {
+    background-color: white;
+  }
+}
+.required-attr {
+  color: $main-red;
+}
