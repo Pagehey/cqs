@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.28.4/dist/sweetalert2.all.min.js"></script>
+/ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.28.4/dist/sweetalert2.all.min.js"></script>
 .admin-header
   = link_to root_path do
     = image_tag 'logo-full.png', class: 'admin-logo'
@@ -14,10 +14,9 @@
     .col-xs-12.col-lg-7
       .admin-events
         .row
-          - 3.times do
-            - @events.each do |event|
-              .col-xs-12.col-sm-6.col-xl-4
-                = render 'shared/admin_event_card', event: event
+          - @events.each do |event|
+            .col-xs-12.col-sm-6.col-xl-4
+              = render 'shared/admin_event_card', event: event
     .col-xs-12.col-lg-5
       .participations
             =render 'shared/participations', event: Event.last

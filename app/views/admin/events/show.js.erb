@@ -4,7 +4,7 @@ function showParticipations(innerHTML) {
   const swalButton = document.getElementById('btn-delete-alert');
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', () => {
-
+      swal = window.sweetAlert
 
       const swalWithBootstrapButtons = swal.mixin({
         confirmButtonClass: 'btn btn-success',

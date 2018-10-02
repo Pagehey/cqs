@@ -1,5 +1,9 @@
 import swal from 'sweetalert2';
 
+// window est un objet fourni par JS qui represente le browser. On peut donc lui
+// assigner des clés (ici, le constructeur swal)
+window.sweetAlert = swal
+
 function deleteEventAlert() {
   const swalWithBootstrapButtons = swal.mixin({
     confirmButtonClass: 'btn btn-success',
