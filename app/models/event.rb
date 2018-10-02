@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  has_many :participations
+  has_many :participations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
