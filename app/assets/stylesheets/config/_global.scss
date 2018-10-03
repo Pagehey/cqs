@@ -13,3 +13,32 @@ a:hover {
   text-decoration: none !important;
 }
 
+a.more {
+  width: 120px;
+  font-weight: bold;
+  color: $light-blue;
+  &:hover {
+    color: $blue;
+  }
+}
+
+// To delete gutters in bootstrap grid
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// WRAPPERS
+.white-wrapper {
+  background-color: white;
+  width: 100%;
+}
+.gray-wrapper {
+  background-color: $light-gray-2;
+  width: 100%;
+}
