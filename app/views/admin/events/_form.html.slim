@@ -7,7 +7,7 @@
         .col-xs-6
           = f.input :location, required: false, input_html: { autocomplete: 'off', class: 'basic-input'}
         .col-xs-6
-          = f.input :price, required: false, input_html: { autocomplete: 'off', class: 'basic-input'}
+          = f.input :price, required: false, input_html: { autocomplete: 'off', class: 'basic-input', min: 0 }
         .col-xs-6
             = f.input :number_of_places, required: false, input_html: { autocomplete: 'off', class: 'basic-input'}
         .col-xs-6

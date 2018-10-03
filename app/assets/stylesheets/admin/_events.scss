@@ -125,3 +125,8 @@
     height: calc(100vh - 200px);
   }
 }
+@media (min-width: 1649px) {
+  .edit_event, .new_event {
+    transform: scale(1.3);
+  }
+}
