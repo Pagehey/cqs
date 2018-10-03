@@ -1,19 +1,53 @@
-a.more {
-  width: 120px;
-  font-weight: bold;
-  color: $light-blue;
-  &:hover {
-    color: $blue;
+.descriptions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h2.pm-title {
+    color: $main-green;
+    font-weight: bold;
+    width: 100%;
+  }
+  p {
+    font-size: 17px;
+    text-align: justify;
+    text-indent: 15px;
   }
 }
+.images {
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 1200px) {
+  .descriptions {
+    min-height: 550px;
+    height: calc(100vh - 80px);
+  }
+  .images {
+    min-height: 550px;
+    height: calc(100vh - 80px);
+  }
+}
+@media screen and (max-width: 1199px) {
+  .images {
+    min-height: auto;
+    height: 380px;
+    margin-bottom: 40px;
+  }
+}
+
 // PERMACULTURE
 .permaculture {
+  position: relative;
   background-image: asset-url('ecoasis1.JPG');
   background-position-x: center;
   background-position-y: 10%;
   background-size: cover;
-  position: relative;
-  height: 400px;
+  height: 600px;
+}
+@media (min-width: 1500) {
+
 }
 .pm-description {
   position: absolute;
@@ -37,94 +71,30 @@ a.more {
     border: none;
   }
 }
-h2.pm-title {
-  color: $main-green;
-  font-weight: bold;
-  width: 100%;
-}
 
 // ETHIQUE
-.ethique {
-}
 .ethique-img {
-  width: 100%;
-  height: calc(100vh - 80px);
-  min-height: 550px;
-  background-position: center;
-  background-size: contain;
   background-image: asset-url('pm-ethics.png');
-  background-repeat: no-repeat;
-}
-.ethique-description {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: calc(100vh - 80px);
-  min-height: 550px;
-  p {
-    font-size: 17px;
-    text-align: justify;
-    text-indent: 15px;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .ethique-description {
-    min-height: 820px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .ethique-img {
-    min-height: auto;
-    height: 380px !important;
-  }
-  .ethique-description {
-    min-height: 750px;
-  }
 }
 
 // FLEUR
 
 .fleur-img {
-  width: 100%;
-  height: calc(100vh - 80px);
-  min-height: 550px;
-  background-position: center;
-  background-size: contain;
   background-image: asset-url('pm-fleur.png');
-  background-repeat: no-repeat;
-}
-.fleur-description {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: calc(100vh - 80px);
-  min-height: 550px;
-  p {
-    font-size: 17px;
-    text-align: justify;
-    text-indent: 15px;
-  }
 }
 
 // PRINCIPES
 .principes-img {
-  width: 100%;
-  height: calc(100vh - 80px);
-  min-height: 550px;
-  background-position: center;
-  background-size: contain;
   background-image: asset-url('pm-principes.png');
-  background-repeat: no-repeat;
 }
-.principes-description {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: calc(100vh - 80px);
-  min-height: 550px;
-  p {
-    font-size: 17px;
-    text-align: justify;
-    text-indent: 15px;
+
+// SOURCES
+.sources {
+  padding: 10px;
+  small {
+  }
+  a {
+    font-weight: lighter !important;
+    margin-left: 10px;
   }
 }
