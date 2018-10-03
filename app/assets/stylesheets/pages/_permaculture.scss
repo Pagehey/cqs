@@ -1,3 +1,11 @@
+a.more {
+  width: 120px;
+  font-weight: bold;
+  color: $light-blue;
+  &:hover {
+    color: $blue;
+  }
+}
 // PERMACULTURE
 .permaculture {
   background-image: asset-url('ecoasis1.JPG');
@@ -29,6 +37,11 @@
     border: none;
   }
 }
+h2.pm-title {
+  color: $main-green;
+  font-weight: bold;
+  width: 100%;
+}
 
 // ETHIQUE
 .ethique {
@@ -48,11 +61,6 @@
   flex-direction: column;
   height: calc(100vh - 80px);
   min-height: 550px;
-  h2 {
-    color: $main-green;
-    font-weight: bold;
-    width: 100%;
-  }
   p {
     font-size: 17px;
     text-align: justify;
@@ -74,4 +82,49 @@
   }
 }
 
+// FLEUR
+
+.fleur-img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  min-height: 550px;
+  background-position: center;
+  background-size: contain;
+  background-image: asset-url('pm-fleur.png');
+  background-repeat: no-repeat;
+}
+.fleur-description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  min-height: 550px;
+  p {
+    font-size: 17px;
+    text-align: justify;
+    text-indent: 15px;
+  }
+}
+
 // PRINCIPES
+.principes-img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  min-height: 550px;
+  background-position: center;
+  background-size: contain;
+  background-image: asset-url('pm-principes.png');
+  background-repeat: no-repeat;
+}
+.principes-description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  min-height: 550px;
+  p {
+    font-size: 17px;
+    text-align: justify;
+    text-indent: 15px;
+  }
+}
