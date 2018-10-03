@@ -32,37 +32,26 @@
 
 // ETHIQUE
 .ethique {
-  margin-top: 20px;
 }
-.ethique-pic {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  .ethique-img {
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-position: center;
-    background-size: contain;
-    background-image: asset-url('pm-ethics.png');
-    background-repeat: no-repeat;
-  }
-  .ethique-legend {
-    width: 100%;
-    // display: flex;
-    // justify-content: space-around;
-    p {
-      text-align: center;
-      font-weight: bold;
-    }
-  }
+.ethique-img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  min-height: 550px;
+  background-position: center;
+  background-size: contain;
+  background-image: asset-url('pm-ethics.png');
+  background-repeat: no-repeat;
 }
 .ethique-description {
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
+  height: calc(100vh - 80px);
+  min-height: 550px;
   h2 {
     color: $main-green;
     font-weight: bold;
+    width: 100%;
   }
   p {
     font-size: 17px;
@@ -70,8 +59,19 @@
     text-indent: 15px;
   }
 }
-@media screen and (max-width: 767px) {
-  .ethique-img {
-    height: 380px !important;
+@media screen and (max-width: 1199px) {
+  .ethique-description {
+    min-height: 820px;
   }
 }
+@media screen and (max-width: 767px) {
+  .ethique-img {
+    min-height: auto;
+    height: 380px !important;
+  }
+  .ethique-description {
+    min-height: 750px;
+  }
+}
+
+// PRINCIPES
