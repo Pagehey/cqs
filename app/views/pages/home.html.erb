@@ -77,7 +77,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= render 'shared/vertical_card', event: Event.first %>
+        <%= render 'shared/vertical_card', event: Event.first unless Event.first.nil? %>
       </div>
     </div>
   </div>
