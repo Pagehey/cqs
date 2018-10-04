@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "Creating default admin..."
 
-User.create! email: 'admin@mail.com', password: 'azerty'
+User.create! email: 'admin@mail.com', password: 'azerty', admin: true
 
 puts "Creating events..."
 
