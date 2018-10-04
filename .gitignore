@@ -13,3 +13,6 @@ node_modules
 yarn-error.log
 .byebug_history
 .env*
+.clever.json
+cqs_ssh_key
+cqs_ssh_key.pub
