@@ -80,6 +80,5 @@ test:
 #
 production:
   <<: *default
-  database: cqs_production
-  username: cqs
-  password: <%= ENV['CQS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+
