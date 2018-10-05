@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "Creating default admin..."
 
-User.create! email: 'admin@mail.com', password: 'azerty'
+User.create! email: 'admin@mail.com', password: 'azerty', admin: true
 
 puts "Creating events..."
 
@@ -26,7 +26,7 @@ event = Event.create! title: "Default Event",
                       price: 10,
                       number_of_places: 8,
                       category: "Formation",
-                      photo: File.open(Rails.root.join("db/fixtures/events/event1pic.jpg"))
+                      photo: File.open(Rails.root.join("db/fixtures/events/event3pic.jpg"))
 
 event2 = Event.create! title: "Default Event 2",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
