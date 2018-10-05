@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <div class="navbar-wagon-left hidden-xs hidden-sm">
-    <%= link_to "L'association", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "La permaculture", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "L'association", association_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "La permaculture", permaculture_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
   <div class="navbar-wagon-center">
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -19,7 +19,9 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">L'association</a></li>
+        <li><%= link_to "L'association", association_path %></li>
         <li><a href="#">La permaculture</a></li>
+        <li><%= link_to "La permaculture", permaculture_path %></li>
         <li><a href="#">L'agenda</a></li>
         <li><a href="#">L'Ecoasis</a></li>
       </ul>
