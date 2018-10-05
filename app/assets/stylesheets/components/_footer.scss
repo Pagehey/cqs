@@ -1,0 +1,17 @@
+.footer {
+  background-color: red;
+}
+.footer-contacts {
+  display: flex;
+  justify-content: space-around;
+}
+.mentions p {
+  text-align: center;
+}
+.facebook-link {
+  font-size: 50px;
+  color: $light-black;
+  &:hover {
+    color: black;
+  }
+}
