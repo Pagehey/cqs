@@ -29,7 +29,7 @@
           = f.input :photo, required: false
     .col-xs-12.col-sm-3.col-sm-offset-9
       .submit-btn
-        - if controller.action_name == 'new'
-          = f.submit class: 'btn btn-success event-submit', value: 'Créer'
-        - else
+        - if controller.action_name == 'edit'
           = f.submit class: 'btn btn-success event-submit', value: 'Modifier'
+        - else
+          = f.submit class: 'btn btn-success event-submit', value: 'Créer'

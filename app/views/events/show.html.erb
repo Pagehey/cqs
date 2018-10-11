@@ -1,40 +1,68 @@
-<div class="event-show-banner" style="background-image: url('<%= cl_image_path @event.photo %>')">
+<div class="event-show-banner" style="background-image: linear-gradient(rgba(100,100,100,.2), rgba(100,100,100,.2)), url('<%= cl_image_path @event.photo %>')">
   <h1 class="event-show-title underline"><%= @event.title %></h1>
 </div>
 <div class="event-show-details">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <div class="detail-logo">
-          <i class="fas fa-calendar-alt"></i>
+        <div class="detail">
+          <div class="detail-logo">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <p class="detail-text">
+            <%= prompt_date @event %>
+          </p>
         </div>
-        <p class="detail-text">
-          <%= prompt_date @event %>
-        </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="detail-logo">
-          <i class="fas fa-map-marker-alt"></i>
+        <div class="detail">
+          <div class="detail-logo">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <p class="detail-text">
+            <%= @event.location %>
+          </p>
         </div>
-        <p class="detail-text">
-          <%= @event.location %>
-        </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="detail-logo">
-          <i class="fas fa-users"></i>
+        <div class="detail">
+          <div class="detail-logo">
+            <i class="fas fa-users"></i>
+          </div>
+          <p class="detail-text">
+            <%= pluralize @event.number_of_places, 'place disponible', 'places disponibles' %>
+          </p>
         </div>
-        <p class="detail-text">
-          <%= pluralize @event.number_of_places, 'place disponible', 'places disponibles' %>
-        </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="detail-logo">
-          <i class="fas fa-euro-sign"></i>
+        <div class="detail">
+          <div class="detail-logo">
+            <i class="fas fa-euro-sign"></i>
+          </div>
+          <p class="detail-text">
+            <%= @event.price == 0 ? raw("<strong>Gratuit</strong>") : "#{ @event.price }€ par personne" %>
+          </p>
         </div>
-        <p class="detail-text">
-          <%= @event.price %>€ par personne
-        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="event-show-wrapper">
+  <div class="event-show-main">
+    <div class="row no-gutters">
+      <div class="col-xs-12 col-sm-6">
+        <div class="event-show-description">
+          <h2>Description</h2>
+          <p><%= @event.description %></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="event-show-rotated"></div>
+        <div class="event-show-participation">
+          <h2>Demande d'inscription</h2>
+          <p>Ce formulaire vous permets d’envoyer une demande de reservation, sous reserve de validation de la part de l’association. Le règlement en cas de validation se fait sur place.</p>
+          <%= render 'participations/form', event: @event, participation: @participation %>
+        </div>
       </div>
     </div>
   </div>
