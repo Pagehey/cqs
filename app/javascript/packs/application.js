@@ -8,4 +8,4 @@ import { eventShowSizing } from '../components/event-show-sizing';
 slideAlert();
 adminStickyBehavior();
 bindSweetAlertButton();
-eventShowSizing();
+// eventShowSizing();

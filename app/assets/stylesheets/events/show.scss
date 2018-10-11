@@ -50,11 +50,17 @@
 .event-show-description {
   z-index: 1;
   position: relative;
+  height: 662px;
   background-color: white;
   padding: 50px;
+  p {
+    height: 91%;
+    overflow-y: scroll;
+  }
 }
 .event-show-participation {
   position: relative;
+  height: 662px;
   background-color: $light-gray;
   padding: 50px;
   p {
@@ -68,4 +74,18 @@
   width: 100%;
   background-color: #F7DBA7;
   transform: rotate(9deg);
+}
+@media screen and (max-width: 767px) {
+  .event-show-main {
+    width: 100%;
+  }
+  .event-show-wrapper {
+    padding: 0;
+  }
+  .event-show-description, .event-show-participation {
+    height: auto;
+  }
+  .event-show-description p {
+    height: auto;
+  }
 }
