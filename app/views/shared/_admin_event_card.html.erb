@@ -18,7 +18,7 @@
       <div class="calendar-icon">
         <i class="fas fa-calendar-alt"></i>
       </div>
-      <%= prompt_date(event) %>
+      <p><%= prompt_date(event) %></p>
     </div>
     <div id="event-<%= event.id %>-status">
       <% if event.start_date < Date.today %>

@@ -1,9 +1,9 @@
 module CardDateHelper
   def prompt_date(event)
-    if event.start_date.day != event.end_date.day
-      return raw "<p>#{one_day_(event)}</p>"
+    if event.start_date.day == event.end_date.day
+      return raw "#{one_day_(event)}"
     else
-      return raw "<p>#{several_days_(event)}</p>"
+      return raw "#{several_days_(event)}"
     end
   end
 
