@@ -1,0 +1,41 @@
+<div class="event-show-banner" style="background-image: url('<%= cl_image_path @event.photo %>')">
+  <h1 class="event-show-title underline"><%= @event.title %></h1>
+</div>
+<div class="event-show-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="detail-logo">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <p class="detail-text">
+          <%= prompt_date @event %>
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="detail-logo">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <p class="detail-text">
+          <%= @event.location %>
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="detail-logo">
+          <i class="fas fa-users"></i>
+        </div>
+        <p class="detail-text">
+          <%= pluralize @event.number_of_places, 'place disponible', 'places disponibles' %>
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="detail-logo">
+          <i class="fas fa-euro-sign"></i>
+        </div>
+        <p class="detail-text">
+          <%= @event.price %>€ par personne
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.event-show-banner {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.event-show-details {
+  margin-top: 30px;
+}
+.detail-logo {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $main-green;
+  font-size: 24px;
+}
+.detail-text {
+  margin-top: 10px;
+  text-align: center;
+}
