@@ -1,10 +1,13 @@
 class Participation < ApplicationRecord
   belongs_to :event
+  after_validation :format_phone_number
 
   valid_email_regex = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  valid_phone_regex = /\A0\d(?:\d{8}|(?: \d\d){4}|(?:-\d\d){4})\z/
 
-  validates :first_name, :last_name, presence: { message: 'Veuillez renseigner votre nom et prénom' }
-
+  validates :first_name, presence: { message: 'Veuillez renseigner votre prénom' }
+  validates :last_name, presence: { message: 'Veuillez renseigner votre nom' }
+  validates :number_of_places_wanted, presence: { message: 'Veuillez renseigner le nombre de place(s) souhaitée(s)'}
 
   validates :email,
             presence: { message: "Vous devez renseigner au moins un numéro de téléphone ou une adresse mail" },
@@ -13,7 +16,7 @@ class Participation < ApplicationRecord
             format: { with: valid_email_regex, message: "Adresse mail non valide" },
             unless: :email_missing
   validates :phone_number,
-            length: { is: 10, message: "Ce numéro de téléphone n'est pas valide"},
+            format: { with: valid_phone_regex, message: "Ce numéro de téléphone n'est pas valide"},
             unless: :phone_number_missing
 
   private
@@ -28,5 +31,9 @@ class Participation < ApplicationRecord
 
   def email_missing
     email.empty?
+  end
+
+  def format_phone_number
+    phone_number.gsub(/-|\s/, '').scan(/../).join(' ')
   end
 end

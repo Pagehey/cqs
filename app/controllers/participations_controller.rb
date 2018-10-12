@@ -7,11 +7,7 @@ class ParticipationsController < ApplicationController
       flash.notice = "demande d'inscription enregistrée"
       redirect_to root_path
     else
-      # raise
-      @participation = Participation.new(participation_params)
-      flash.alert = "demande non enregistrée, vérifiez les erreurs"
-      render :new
-      # render 'events/show'
+      render 'events/show'
     end
   end
 

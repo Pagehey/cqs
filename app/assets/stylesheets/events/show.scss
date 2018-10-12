@@ -82,10 +82,17 @@
   .event-show-wrapper {
     padding: 0;
   }
+}
+@media screen and (max-width: 1199px) {
   .event-show-description, .event-show-participation {
     height: auto;
   }
   .event-show-description p {
     height: auto;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1201px) {
+  .dynamic-textaera {
+    height: auto !important;
   }
 }
