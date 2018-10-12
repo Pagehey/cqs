@@ -41,14 +41,14 @@ event2 = Event.create! title: "Default Event 2",
 participation = Participation.new first_name: "Luke",
                                   last_name: "Skywalker",
                                   email: "jedi4ever@mail.com",
-                                  phone_number: 1234567890,
+                                  phone_number: '0234567890',
                                   number_of_places_wanted: 2,
                                   message: "J'aimerai planter des choux sur Tatooine et c'est un peu aride..."
 
 participation2 = Participation.new first_name: "Saruman",
                                   last_name: "Le Blanc",
                                   email: "saruRoxXxor@mail.com",
-                                  phone_number: 1234567890,
+                                  phone_number: '0234567890',
                                   number_of_places_wanted: 1,
                                   message: "blablablablablablabla\
                                   blablablablablablablablablablablabla\
