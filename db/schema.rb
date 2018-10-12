@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_111104) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.integer "number_of_places_wanted"
     t.text "message"
     t.bigint "event_id"

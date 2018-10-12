@@ -1,0 +1,25 @@
+<%= simple_form_for [event, participation] do |f| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <%= f.input :last_name, input_html: { autocomplete: 'off', class: 'basic-input' }, error: false, required: false %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.input :first_name, input_html: { autocomplete: 'off', class: 'basic-input' }, error: false, required: false %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.input :phone_number, input_html: { autocomplete: 'off', class: 'basic-input' }, error: false %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.input :email, input_html: { autocomplete: 'off', class: 'basic-input' }, error: false %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.input :number_of_places_wanted, as: :select, collection: 1..3, input_html: { class: 'basic-input' }, prompt: "--sélectionner--", error: false, required: false %>
+    </div>
+    <div class="col-xs-12">
+      <%= f.input :message, label: raw('Message <small>(optionnel)</small>'), input_html: { autocomplete: 'off', class: 'basic-input dynamic-textaera', placeholder: 'Accompagnez votre demande de reservation d’un message', style: 'height: 100px' }, error: false %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.submit class: 'btn btn-success event-submit', value: 'Participer', :'data-disable-with' => 'Participer' %>
+    </div>
+  </div>
+<% end %>
