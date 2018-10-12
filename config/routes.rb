@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'permaculture', to: 'pages#permaculture'
 
+  get 'agenda', to: 'pages#agenda'
+
   resources :events, only: [:index, :show] do
     resources :participations, only: [:create]
   end
