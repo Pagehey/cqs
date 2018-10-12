@@ -4,13 +4,13 @@
       .row
         .col-xs-12
           = f.input :title, required: false, input_html: { autocomplete: 'off', class: 'basic-input'}
-        .col-xs-6
+        .col-xs-12.col-sm-6
           = f.input :location, required: false, input_html: { autocomplete: 'off', class: 'basic-input'}
-        .col-xs-6
+        .col-xs-12.col-sm-6
           = f.input :price, required: false, input_html: { autocomplete: 'off', class: 'basic-input', min: 0 }
-        .col-xs-6
+        .col-xs-12.col-sm-6
             = f.input :number_of_places, required: false, input_html: { autocomplete: 'off', class: 'basic-input'}
-        .col-xs-6
+        .col-xs-12.col-sm-6
           .form-group
             label for="event_category" Catégorie
             select class="basic-input form-control" autocomplete="off" type="text" name="event[category]" id="event_category"
@@ -21,9 +21,9 @@
       .row
         .col-xs-12
           = f.input :description, required: false, input_html: { autocomplete: 'off', class: 'basic-input', style: "height: 123px;"}
-        .col-xs-6
+        .col-xs-12.col-sm-6
           = f.input :start_date, as: :string, required: false, input_html: { class: "datepicker basic-input" }
-        .col-xs-6
+        .col-xs-12.col-sm-6
           = f.input :end_date, as: :string, required: false, input_html: { class: "datepicker basic-input" }
         .col-xs-12.col-sm-6
           = f.input :photo, required: false
