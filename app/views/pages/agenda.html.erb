@@ -1,7 +1,20 @@
 <div class="agenda-sliders"></div>
 <div class="agenda-header">
-  <div class="container">
+  <div class="agenda-header-wrapper">
     <h1 class="underline">Agenda</h1>
     <p>Nous organisons tout au long de l’année des événements, des ateliers ainsi que des journées participative, au cours desquelles se mêlent apprentissage, découvertes et sensibilisation.</p>
+  </div>
+</div>
+<div class="agenda-main">
+  <div class="agenda-search">
+    <div class="agenda-categories">
+      <p>Catégories</p>
+      <%= link_to 'Ateliers'  , agenda_path, class: 'agenda-filter ateliers', remote: true %>
+      <%= link_to 'Formations', agenda_path, class: 'agenda-filter formations', remote: true %>
+      <%= link_to 'Événements', agenda_path, class: 'agenda-filter evenements', remote: true %>
+    </div>
+    <div class="agenda-month">
+      <p>Période</p>
+    </div>
   </div>
 </div>
