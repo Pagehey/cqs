@@ -34,6 +34,6 @@ class Participation < ApplicationRecord
   end
 
   def format_phone_number
-    phone_number.gsub(/-|\s/, '').scan(/../).join(' ')
+    self.phone_number = phone_number.gsub(/-|\s/, '').scan(/../).join(' ')
   end
 end
