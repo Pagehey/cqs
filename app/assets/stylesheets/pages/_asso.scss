@@ -1,0 +1,123 @@
+.asso-wrapper {
+  background-image: asset-url('mobilette.JPG');
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  width: 100vw;
+  text-align: center;
+  padding-top: 100px;
+  color: white;
+  .asso-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      max-width: 725px;
+    }
+  }
+}
+
+.values-wrapper {
+  text-align: center;
+  background: linear-gradient(rgba(249, 249, 249, 0.75), rgba(249, 249, 249, 0.75)), asset-url('bees.JPG'), ;
+  background-position: center;
+  background-size: cover;
+  .values-title {
+    margin: 30px 0;
+  }
+  .values-infos {
+    max-width: 625px;
+  }
+}
+
+.ethique-wrapper {
+  height: 500px;
+  width: 100%;
+  background-image: asset-url('field-dark.JPG');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  p {
+    font-size: 19px;
+    color: white;
+    position: absolute;
+    left: 110px;
+    bottom: 50px;
+    max-width: 500px;
+    min-width: 365px;
+    font-family: 'Roboto';
+  }
+  .bigger {
+    font-size: 36px;
+  }
+}
+
+.agenda-wrapper {
+  .agenda-content {
+    margin: 60px 0;
+    .agenda-ellispe {
+      height: 350px;
+      width: 350px;
+      min-width: 350px;
+      background-image: asset-url('public.jpg');
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      margin-right: 30px;
+    }
+    .agenda-description {
+      max-width: 500px;
+      min-width: 300px;
+      margin-left: 30px;
+      .desciption-title {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .description-content {
+        font-size: 16px;
+        margin: 35px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .ethique-wrapper {
+    p {
+      left: 50%;
+      top: 70%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+  .agenda-wrapper {
+    .agenda-content {
+      flex-direction: column;
+      .agenda-ellispe {
+        margin-right: 0;
+      }
+      .agenda-description {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ethique-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    p {
+      top: 60%;
+    }
+  }
+  .agenda-description {
+    width: auto;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+}
+
+
