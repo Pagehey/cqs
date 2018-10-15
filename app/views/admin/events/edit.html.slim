@@ -7,7 +7,7 @@
   = link_to admin_events_path do
     h3#gerer Gérer
   = link_to new_admin_event_path do
-    h3#creer.underline Créer
+    h3#creer.underline Modifier
 .new-event
   .container
     = render 'admin/events/form', event: @event

@@ -1,0 +1,30 @@
+.footer {
+  background-color: $light-gray-2;
+}
+.footer-contacts {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  h5 {
+    color: $main-green;
+  }
+}
+.mentions small {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.facebook-link {
+  font-size: 50px;
+  color: $light-black;
+  &:hover {
+    color: $dark-blue;
+  }
+}
+
+@media (min-width: 768px){
+  .footer-contacts {
+    display: flex;
+    justify-content: space-around;
+  }
+}

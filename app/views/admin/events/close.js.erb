@@ -3,7 +3,7 @@ function closeEvent(id) {
   const eventDetailsStatus = document.getElementById('event-' + id + '-details-status')
   eventCardStatus.innerHTML   = '<p class="inscriptions-closed">Incriptions fermées</p>'
   eventDetailsStatus.innerHTML = '<p class="inscriptions-closed">Inscriptions fermées</p>\
-<a data-confirm="Êtes-vous sûr ?" data-remote="true" href="/admin/events/15/open">(rouvrir)</a>'
+<a data-confirm="Êtes-vous sûr ?" data-remote="true" href="/admin/events/<%= @event.id %>/open">(rouvrir)</a>'
 }
 
 closeEvent('<%= @event.id %>');

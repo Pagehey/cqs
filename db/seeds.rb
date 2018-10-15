@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "Creating default admin..."
 
-User.create! email: 'admin@mail.com', password: 'azerty'
+User.create! email: 'admin@mail.com', password: 'azerty', admin: true
 
 puts "Creating events..."
 
@@ -26,7 +26,7 @@ event = Event.create! title: "Default Event",
                       price: 10,
                       number_of_places: 8,
                       category: "Formation",
-                      photo: File.open(Rails.root.join("db/fixtures/events/event1pic.jpg"))
+                      photo: File.open(Rails.root.join("db/fixtures/events/event3pic.jpg"))
 
 event2 = Event.create! title: "Default Event 2",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
@@ -41,14 +41,14 @@ event2 = Event.create! title: "Default Event 2",
 participation = Participation.new first_name: "Luke",
                                   last_name: "Skywalker",
                                   email: "jedi4ever@mail.com",
-                                  phone_number: 1234567890,
+                                  phone_number: '0234567890',
                                   number_of_places_wanted: 2,
                                   message: "J'aimerai planter des choux sur Tatooine et c'est un peu aride..."
 
 participation2 = Participation.new first_name: "Saruman",
                                   last_name: "Le Blanc",
                                   email: "saruRoxXxor@mail.com",
-                                  phone_number: 1234567890,
+                                  phone_number: '0234567890',
                                   number_of_places_wanted: 1,
                                   message: "blablablablablablabla\
                                   blablablablablablablablablablablabla\

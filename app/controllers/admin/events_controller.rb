@@ -1,5 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_action :authenticate_user!
+  before_action :isAdmin?
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -82,5 +83,12 @@ class Admin::EventsController < ApplicationController
                                   :start_date,
                                   :end_date
                                   )
+  end
+
+  def isAdmin?
+    unless current_user.admin
+      flash[:alert] = "Vous devez avoir un compte administrateur pour accéder à cette page."
+      redirect_to root_path
+    end
   end
 end

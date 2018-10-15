@@ -16,10 +16,11 @@
     .row
       .col-xs-12.col-lg-7
         .admin-events
-          .row
-            - @events.each do |event|
-              .col-xs-12.col-sm-6.col-xl-4
-                = render 'shared/admin_event_card', event: event
+          .container-fluid
+            .row
+              - @events.each do |event|
+                .col-xs-12.col-sm-6.col-xl-4
+                  = render 'shared/admin_event_card', event: event
       .col-xs-12.col-lg-5
         .participations
           =render 'shared/participations', event: Event.last

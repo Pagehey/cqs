@@ -10,6 +10,13 @@ fr:
         description: 'Description'
         start_date: 'Début'
         end_date: 'Fin'
+      participation:
+        first_name: 'Nom'
+        last_name: 'Prénom'
+        phone_number: 'Téléphone'
+        email: 'Email'
+        number_of_places_wanted: 'Nombre de place'
+        message: 'Message'
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'
@@ -118,10 +125,10 @@ fr:
       second: Seconde
       year: Année
   errors:
-    format: "%{attribute} %{message}"
+    format: "Ce champ %{message}"
     messages:
       accepted: doit être accepté(e)
-      blank: doit être rempli(e)
+      blank: doit être rempli
       present: doit être vide
       confirmation: ne concorde pas avec %{attribute}
       empty: doit être rempli(e)
@@ -159,9 +166,9 @@ fr:
     select:
       prompt: Veuillez sélectionner
     submit:
-      create: Créer un(e) %{model}
-      submit: Enregistrer ce(tte) %{model}
-      update: Modifier ce(tte) %{model}
+      create: Créer
+      submit: Enregistrer
+      update: Modifier
   number:
     currency:
       format:
