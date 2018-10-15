@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def permaculture
   end
+
+  def association
+  end
 end

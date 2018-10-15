@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'permaculture', to: 'pages#permaculture'
+  get 'association', to: 'pages#association'
 
   resources :events, only: [:index, :show] do
     resources :participations, only: [:create]

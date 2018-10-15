@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_111104) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "price"
-    t.integer "number_of_places"
+    t.string "number_of_places"
     t.string "category"
     t.boolean "out_of_places", default: false
     t.datetime "created_at", null: false

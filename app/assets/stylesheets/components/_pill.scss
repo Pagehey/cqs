@@ -1,0 +1,52 @@
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.pill-container {
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+  height: 250px;
+  margin-bottom: 50px;
+}
+
+.pill-title {
+  font-size: 18px;
+  padding: 40px 30px 0 30px;
+}
+
+.pill-content {
+  font-size: 14px;
+  padding: 5px 30px;
+}
+
+
+#light-red {
+  background-color: $main-red-2;
+}
+
+#light-sand {
+  background-color: $sand-2;
+}
+
+#light-blue {
+  background-color: $light-blue-2;
+}
+
+#light-green {
+  background-color: $main-green-2;
+}
+
+#light-gray {
+  background-color: $light-brown;
+}
+
+#light-black {
+  background-color: $dark-gray;
+}
