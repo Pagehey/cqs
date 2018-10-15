@@ -7,12 +7,12 @@
 .basic-input {
   &:focus {
     border: none;
-    box-shadow: 2px 2px 5px $main-green;
+    box-shadow: 0px 0px 10px rgba(179, 190, 74, 0.4);
     transform: scale(1.05);
   }
   transition: .2s;
   border: none;
-  box-shadow: 2px 2px 5px hsla(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px hsla(50, 50, 50, 0.1);
   &[readonly] {
     background-color: white;
   }
@@ -22,6 +22,9 @@
 }
 label small {
   font-weight: lighter;
+}
+textarea {
+  resize: none;
 }
 textarea[placeholder] {
   font-size: 14px;
