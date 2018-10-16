@@ -1,0 +1,21 @@
+.agenda-header {
+  background-color: white;
+}
+.agenda-header-wrapper {
+  padding: 20px 25% 100px 25%;
+  h1, p {
+    display: inline-block;
+  }
+}
+.agenda-main {
+  height: 30vh;
+}
+.agenda-search {
+  position: relative;
+  top: -45px;
+  height: 90px;
+  width: 70%;
+  margin: auto;
+  border-radius: 70px;
+  background-color: $main-red;
+}
