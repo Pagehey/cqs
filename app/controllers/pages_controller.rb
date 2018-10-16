@@ -9,4 +9,16 @@ class PagesController < ApplicationController
 
   def association
   end
+
+  def agenda
+    if params[:category].present?
+      @events = Event.where(category: params[:category])
+    else
+      @events = Event.all
+    end
+  end
+  respond_to do |format|
+    format.html { redirect_to agenda_path }
+    format.js
+  end
 end

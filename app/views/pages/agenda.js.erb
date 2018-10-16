@@ -1,0 +1,28 @@
+function refreshAgenda(innerHTML) {
+  const agendaEvents     = document.querySelector('.agenda-events');
+  const atelierFilter    = document.querySelector('.atelier');
+  const formationFilter  = document.querySelector('.formation');
+  const evenementFilter  = document.querySelector('.événement');
+  const clickedFilter    = document.querySelector('.<%= params[:category].downcase %>');
+
+  atelierFilter.classList.remove('active-filter');
+  formationFilter.classList.remove('active-filter');
+  evenementFilter.classList.remove('active-filter');
+  clickedFilter.classList.add('active-filter');
+
+  agendaEvents.innerHTML = innerHTML;
+}
+
+<% if @events.empty? %>
+  refreshAgenda("<h3 class='text-center'>Désolé, il n'y pas d'événement correspondant à votre recherche. =(</h3>");
+<% else %>
+  refreshAgenda("<div class='container'>\
+      <div class='row'>\
+        <% @events.each do |event| %>\
+          <div class='col-xs-12 col-sm-6 col-md-4'>\
+            <%= j render 'shared/vertical_card', event: event %>\
+          </div>\
+        <% end %>\
+      </div>\
+    </div>");
+<% end %>

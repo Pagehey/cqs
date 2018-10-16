@@ -14,8 +14,69 @@
   position: relative;
   top: -45px;
   height: 90px;
-  width: 70%;
+  width: 560px;
   margin: auto;
+  padding: 0 20px;
   border-radius: 70px;
   background-color: $main-red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  p {
+    color: white;
+    font-weight: bolder;
+    font-family: $headers-font;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 589px) {
+  .agenda-search {
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    margin: auto;
+  }
+}
+.agenda-categories {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.agenda-month {
+  width: 30%;
+  min-width: 220px;
+  max-width: 280px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.agenda-filter {
+  padding: 5px 15px;
+  color: $dark-blue;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 20px;
+  transition: .2s;
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    color: $dark-blue;
+  }
+  &:focus {
+    text-decoration: none;
+    color: $dark-blue;
+  }
+}
+.active-filter {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+.agenda-events {
+  min-height: 200px;
+  h3 {
+    padding: 0 30px;
+  }
 }

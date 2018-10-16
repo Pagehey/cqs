@@ -1,5 +1,6 @@
 class Participation < ApplicationRecord
   belongs_to :event
+
   after_validation :format_phone_number
 
   valid_email_regex = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
