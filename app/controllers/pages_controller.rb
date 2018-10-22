@@ -12,9 +12,13 @@ class PagesController < ApplicationController
 
   def agenda
     if params[:category].present?
-      @events = Event.where(category: params[:category])
+      if params[:category] == 'Tous'
+        @events = Event.where('start_date > ?', Date.today).order(:start_date)
+      else
+        @events = Event.where(category: params[:category]).order(:start_date)
+      end
     else
-      @events = Event.all
+      @events = Event.where('start_date > ?', Date.today).order(:start_date)
     end
   end
   respond_to do |format|

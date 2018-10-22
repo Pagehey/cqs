@@ -9,9 +9,10 @@
   <div class="agenda-search">
     <!-- <div class="agenda-categories"> -->
       <p>Catégories :</p>
-      <%= link_to 'Ateliers'  , agenda_path(category: 'Atelier'), class: 'agenda-filter atelier', remote: true %>
+      <%= link_to 'Ateliers', agenda_path(category: 'Atelier'), class: 'agenda-filter atelier', remote: true %>
       <%= link_to 'Formations', agenda_path(category: 'Formation'), class: 'agenda-filter formation', remote: true %>
       <%= link_to 'Événements', agenda_path(category: 'Événement'), class: 'agenda-filter événement', remote: true %>
+      <%= link_to 'Tous', agenda_path(category: 'Tous'), class: 'agenda-filter tous active-filter', remote: true %>
     <!-- </div> -->
     <div class="agenda-month" style="display: none;">
       <p>Période :</p>
@@ -21,6 +22,9 @@
   <div class="agenda-events">
     <div class="container">
       <div class="row">
+        <% if @events.empty? %>
+          <h3>Désolé, nous n'avons aucun événement à vous proposer pour le moment. =(</h3>
+        <% end %>
         <% @events.each do |event| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <%= render 'shared/vertical_card', event: event %>

@@ -24,6 +24,7 @@ class Admin::EventsController < ApplicationController
       flash[:notice] = "Événement créé avec succès."
       redirect_to admin_events_path
     else
+      flash[:alert] = "Merci d'ajouter une photo à l'événement."
       render :new
     end
   end

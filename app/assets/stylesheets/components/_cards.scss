@@ -45,7 +45,7 @@
       p {
         margin: 0;
         font-size: 13px;
-        color: $dark-gray;
+        color: $light-black;
       }
     }
   }
@@ -97,4 +97,7 @@
 }
 .événement {
   background-color: $sand;
+}
+.tous {
+  background: $main-green;
 }
