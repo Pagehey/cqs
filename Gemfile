@@ -21,6 +21,8 @@ gem 'slim'
 gem 'cloudinary', '~> 1.9'
 gem 'carrierwave', '~> 1.2'
 
+gem 'enumerize'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

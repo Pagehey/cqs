@@ -1,6 +1,7 @@
 <div class="vertical-card">
   <div class="vertical-card-image" style="background-image: url('<%= cl_image_path event.photo, width: 600, crop: :scale %>')">
   </div>
+  <span class="card-category <%= event.category.downcase %>"><%= event.category %></span>
   <div class="ribbon">
     <div class="ribbon-top">
       <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
@@ -13,7 +14,7 @@
 
   </div>
   <div class="vertical-card-content">
-    <h4><%= event.title %></h4>
+    <h4><%= truncate event.title, length: 18 %></h4>
     <div class="vertical-card-date">
       <div class="calendar-icon">
         <i class="fas fa-calendar-alt"></i>

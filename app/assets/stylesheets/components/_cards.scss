@@ -45,7 +45,7 @@
       p {
         margin: 0;
         font-size: 13px;
-        color: $dark-gray;
+        color: $light-black;
       }
     }
   }
@@ -79,4 +79,25 @@
       margin-bottom: 0;
     }
   }
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.atelier {
+  background-color: #84C3D1;
+}
+.formation {
+  background-color: $main-green-2;
+}
+.événement {
+  background-color: $sand;
+}
+.tous {
+  background: $main-green;
 }

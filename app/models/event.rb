@@ -1,7 +1,11 @@
 class Event < ApplicationRecord
+  extend Enumerize
+
   has_many :participations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
+
+  enumerize :category, in: ["Atelier", "Formation", "Événement"]
 
   validates :title, presence: { message: :blank}, uniqueness: { message: :exclusion}
   validates :description, presence: { message: :blank}
