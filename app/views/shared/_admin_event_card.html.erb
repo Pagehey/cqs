@@ -29,6 +29,9 @@
         <p class="inscriptions-closed">Incriptions fermées</p>
       <% end %>
     </div>
-    <%= link_to "Voir les messages", admin_event_path(event), class: "underline-bis link bold", remote: true %>
+    <%= link_to admin_event_path(event), class: "underline-bis link bold", remote: true do %>
+      Voir les messages
+      <span class="badge">0</span>
+    <% end %>
   </div>
 </div>
