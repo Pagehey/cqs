@@ -70,16 +70,21 @@ participation2 = Participation.new first_name: "Saruman",
                                   email: "saruRoxXxor@mail.com",
                                   phone_number: '0234567890',
                                   number_of_places_wanted: 1,
-                                  message: "blablablablablablabla\
-                                  blablablablablablablablablablablabla\
-                                  # blablablablablablablablablablabla
-                                  blablablablablablablablablablablablablablabla\
-                                  blablablablablablablablabla"
+                                  message: "Y'a une bande de connards qui a ravagé mon terrain, je dois tout reprendre à zéro ..."
 
-participation.event = event
+participation3 = Participation.new first_name: "Clintis",
+                                  last_name: "Wood",
+                                  email: "plop@mail.com",
+                                  phone_number: '0234567891',
+                                  number_of_places_wanted: 3,
+                                  message: "\"Quand t'es dans le désert ...\" ben y'a pas un chou qui pousse."
+
+participation.event  = event
 participation2.event = event2
+participation3.event = event2
 
 participation.save!
 participation2.save!
+participation3.save!
 
 puts "Finished!"

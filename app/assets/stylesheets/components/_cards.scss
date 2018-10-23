@@ -101,3 +101,14 @@
 .tous {
   background: $main-green;
 }
+.badge {
+  position: absolute;
+  font-size: 14px;
+  margin-left: 3px;
+}
+.unread-badge {
+  background-color: $main-red;
+}
+.read-badge {
+  background-color: $main-green;
+}

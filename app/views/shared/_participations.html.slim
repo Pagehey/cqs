@@ -18,7 +18,7 @@
       input.btn.btn-danger type="button" id="btn-delete-alert" value="Supprimer"
       = link_to 'Supprimer', admin_event_path(event), class: 'hidden', method: :delete, id: 'btn-delete'
 
-  h3 Demandes d'inscription
+  h3 #{ pluralize event.participations.count, 'demande', 'demandes' } d'inscription
   - if event.participations.empty?
     p.text-center Il n'y pas encore de demande d'inscription pour cet événement.
   - else
