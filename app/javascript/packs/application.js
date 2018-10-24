@@ -9,3 +9,5 @@ slideAlert();
 adminStickyBehavior();
 bindSweetAlertButton();
 // eventShowSizing();
+
+

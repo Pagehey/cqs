@@ -12,11 +12,15 @@
   .admin-logout {
     color: $main-red;
     position: absolute;
-    right: 30px;
-    top: 10px;
+    right: 20px;
+    bottom: 10px;
   }
 }
-
+@media screen and (max-width: 529px) {
+  .admin-header h1 {
+    font-size: 33px;
+  }
+}
 .admin-logo {
   position: absolute;
   top: 7px;
@@ -25,6 +29,7 @@
 }
 
 .admin-actions {
+  position: relative;
   height: 60px;
   width: 300px;
   margin-bottom: 50px;
@@ -41,9 +46,15 @@
       color: black;
     }
   }
+  .unread-messages-count {
+    position: absolute;
+    bottom: -25px;
+    color: $main-red;
+  }
 }
 
 .admin-events {
+  padding-top: 15px;
 }
 
 .event-actions {
@@ -61,7 +72,8 @@
   top: 0;
   border-left: 1px solid hsla(0, 50%, 0%, 0.2);
   h2 {
-    margin-bottom: 30px;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
     text-align: center;
     color: $light-black;
   }
@@ -71,7 +83,6 @@
     border-top: 1px solid hsla(0, 50%, 0%, 0.2);
     text-align: center;
     color: $light-black;
-    width: 350px;
   }
 }
 .out-of-places {
@@ -82,7 +93,7 @@
   }
   a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     color: hsla(0, 0, 0, 0.2);
     &:hover {
       color: $yellow;

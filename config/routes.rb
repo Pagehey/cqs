@@ -12,8 +12,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :events do
-      get 'close' , to: 'events#close'
-      get 'open'  , to: 'events#open'
+      member do
+        get 'close'
+        get 'open'
+        get 'mark_participations_as_read'
+      end
     end
   end
 end
