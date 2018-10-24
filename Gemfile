@@ -24,6 +24,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'enumerize'
 
 gem 'unread'
+gem 'route_translator'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

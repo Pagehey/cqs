@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'association', to: 'pages#association'
   get 'agenda', to: 'pages#agenda'
 
-  resources :events, only: [:index, :show] do
-    resources :participations, only: [:create]
+  localized do
+    resources :events, only: [:show], param: :slug do
+      resources :participations, only: [:create]
+    end
   end
 
   namespace :admin do

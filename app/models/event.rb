@@ -16,4 +16,12 @@ class Event < ApplicationRecord
   validates :category, presence: { message: :blank}
   validates :number_of_places, presence: { message: :blank}
   validates :photo, presence: { message: :blank}
+
+  def add_slug
+    update(slug: to_slug(title))
+  end
+
+  def to_param
+    slug
+  end
 end

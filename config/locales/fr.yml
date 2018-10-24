@@ -1,4 +1,6 @@
 fr:
+  routes:
+    events: événements
   activerecord:
     attributes:
       event:
