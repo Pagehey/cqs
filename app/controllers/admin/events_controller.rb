@@ -1,7 +1,7 @@
 class Admin::EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :isAdmin?
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin?
+  before_action :set_event, except: [:index, :new, :create]
 
   def index
     @events = Event.all.order(start_date: :desc)
@@ -21,10 +21,10 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash[:notice] = "Événement créé avec succès."
+      flash.now[:notice] = "Événement créé avec succès."
       redirect_to admin_events_path
     else
-      flash[:alert] = "Merci d'ajouter une photo à l'événement."
+      flash.now[:alert] = "Merci d'ajouter une photo à l'événement." if @event.photo.blank?
       render :new
     end
   end
@@ -34,7 +34,7 @@ class Admin::EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      flash[:notice] = "Événement modifié avec succès."
+      flash.now[:notice] = "Événement modifié avec succès."
       redirect_to admin_events_path
     else
       render :edit
@@ -42,13 +42,12 @@ class Admin::EventsController < ApplicationController
   end
 
   def destroy
-    flash[:notice] = "Événement \"#{@event.title}\" supprimé avec succès."
+    flash.now[:notice] = "L'événement \"#{@event.title}\" a été supprimé avec succès."
     @event.destroy
     redirect_to admin_events_path
   end
 
   def close
-    @event = Event.find(params[:event_id])
     @event.out_of_places = true
     @event.save
     respond_to do |format|
@@ -58,13 +57,17 @@ class Admin::EventsController < ApplicationController
   end
 
   def open
-    @event = Event.find(params[:event_id])
     @event.out_of_places = false
     @event.save
     respond_to do |format|
       format.html { redirect_to admin_events_path }
       format.js
     end
+  end
+
+  def mark_participations_as_read
+     Participation.mark_as_read! @event.participations, for: current_user
+     redirect_to admin_events_path
   end
 
   private
@@ -86,9 +89,9 @@ class Admin::EventsController < ApplicationController
                                   )
   end
 
-  def isAdmin?
+  def is_admin?
     unless current_user.admin
-      flash[:alert] = "Vous devez avoir un compte administrateur pour accéder à cette page."
+      flash.now[:alert] = "Vous devez avoir un compte administrateur pour accéder à cette page."
       redirect_to root_path
     end
   end

@@ -1,15 +1,10 @@
 .participation-box {
   position: relative;
   margin: 30px auto;
-  height: 170px;
-  width: 440px;
+  // height: 170px;
+  max-width: 440px;
   background-color: white;
   border-radius: 2px;
-}
-@media screen and (max-width: 949px) {
-  .participation-box {
-    width: 340px;
-  }
 }
 
 .participation-infos {
@@ -25,8 +20,9 @@
 }
 
 .participation-contact {
+  padding: 0 5%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   p {
     font-size: 16px;
@@ -35,6 +31,11 @@
   i {
     margin-right: 5px;
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 449px) {
+  .participation-contact {
+    flex-direction: column;
   }
 }
 
@@ -51,5 +52,22 @@
   p {
     font-size: 14px;
     margin: 0;
+  }
+}
+.participation-unread {
+  position: absolute;
+  top: 5px;
+  right: 5%;
+  color: $main-red;
+}
+.mark-as-read {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: hsla(0, 0, 0, 0.2);
+  &:hover {
+    color: $yellow;
+    font-weight: bold;
   }
 }

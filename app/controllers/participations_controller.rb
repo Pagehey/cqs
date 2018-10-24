@@ -4,7 +4,7 @@ class ParticipationsController < ApplicationController
     @event = Event.find(params[:event_id])
     @participation.event = @event
     if @participation.save
-      flash.notice = "demande d'inscription enregistrée"
+      flash.now[:notice] = "demande d'inscription enregistrée"
       redirect_to root_path
     else
       render 'events/show'

@@ -30,7 +30,7 @@
       <% end %>
     </div>
     <%= link_to admin_event_path(event), class: "underline-bis link bold", remote: true do %>
-      Voir les messages
+      Voir les demandes
       <span class="badge <%= event.participations.unread_by(current_user).count > 0 ? 'unread-badge' : 'read-badge' %>"><%= event.participations.unread_by(current_user).count %></span>
     <% end %>
   </div>
