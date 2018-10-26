@@ -1,8 +1,9 @@
 // Specific CSS for your home-page
 .banner {
-  height: 600px;
-  width: 100vw;
-  margin-top: -90px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), asset-url('drone-cqs.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 80px);
   position: relative;
   display: flex;
   justify-content: space-around;
