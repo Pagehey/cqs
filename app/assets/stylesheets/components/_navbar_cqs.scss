@@ -8,8 +8,11 @@
   position: sticky;
   top: 0px;
   z-index: 5;
+  transition: .5s;
 }
-
+.navbar-cqs-centered {
+  justify-content: center;
+}
 .navbar-logo {
   position: absolute;
   bottom:-50px;
