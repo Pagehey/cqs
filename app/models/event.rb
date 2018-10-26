@@ -17,6 +17,8 @@ class Event < ApplicationRecord
   validates :number_of_places, presence: { message: :blank}
   validates :photo, presence: { message: :blank}
 
+  after_save :add_slug
+
   def add_slug
     update(slug: to_slug(title))
   end
