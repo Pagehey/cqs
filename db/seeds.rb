@@ -58,6 +58,8 @@ event4 = Event.create! title: "Default Événement event 4 avec titre trop long"
                       category: "Événement",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
+puts "Creating participations..."
+
 participation = Participation.new first_name: "Luke",
                                   last_name: "Skywalker",
                                   email: "jedi4ever@mail.com",

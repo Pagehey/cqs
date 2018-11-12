@@ -103,6 +103,18 @@
   }
 }
 
+.agenda-link {
+  margin-bottom: 35px;
+  text-decoration: none;
+  color: #4E4E4E;
+  font-weight: bolder;
+  transition: all ease-out .3s;
+  &:hover {
+    transform: scale(1.1);
+    color: $dark-blue;
+  }
+}
+
 .home-agenda-box {
   padding-top: 104px;
   h2 {
@@ -131,6 +143,18 @@
     p {
       text-align: center;
       margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 0 4px;
+  }
+
+  .home-agenda-box {
+    p {
+      padding: 50px 10px;
     }
   }
 }

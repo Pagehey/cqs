@@ -1,0 +1,17 @@
+<div class="big-card-home">
+  <div class="big-card-image" style="background-image: url(<%= cl_image_path(event.photo) %>); height: 200px; width: 348.5px; background-size: cover; background-position: center;" ></div>
+  <div class="colored-block"></div>
+  <div class="big-card-content">
+    <h4><%= event.title %></h4>
+    <p><%= prompt_date(event) %></p>
+    <%= link_to 'Plus d\'infos', event_path(event), class: 'underline-bis' %>
+  </div>
+  <div class="ribbon">
+    <div class="ribbon-top">
+      <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
+    </div>
+    <div class="ribbon-bottom">
+      <p><%= event.start_date.day %></p>
+    </div>
+  </div>
+</div>

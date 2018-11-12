@@ -1,0 +1,20 @@
+<div class="horizontal-card flex">
+  <div class="horizontal-card-image" style="background-image: url(<%= cl_image_path(event.photo) %>); height: 178px; background-size: cover; background-position: center;">
+    <div class="ribbon">
+      <div class="ribbon-top">
+        <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
+      </div>
+      <div class="ribbon-bottom">
+        <p><%= event.start_date.day %></p>
+      </div>
+    </div>
+  </div>
+  <div class="horizontal-card-content">
+    <div class="colored-block"></div>
+    <div class="horizontal-content-infos">
+      <h4><%= event.title %></h4>
+      <p><%= prompt_date(event) %></p>
+      <%= link_to 'Plus d\'infos', event_path(event), class: 'underline-bis' %>
+    </div>
+  </div>
+</div>
