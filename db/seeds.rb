@@ -38,6 +38,28 @@ event2 = Event.create! title: "Default Event 2",
                       category: "Formation",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
+event3 = Event.create! title: "Default Event 3",
+                      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
+                      location: "Ecoasis, Guérande",
+                      start_date: DateTime.now,
+                      end_date: DateTime.now + 1,
+                      price: 450,
+                      number_of_places: 7,
+                      category: "Formation",
+                      photo: File.open(Rails.root.join("db/fixtures/events/event4pic.jpg"))
+
+event4 = Event.create! title: "Inititiation à la permaculture",
+                      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
+                      location: "Ecoasis, Guérande",
+                      start_date: DateTime.now,
+                      end_date: DateTime.now + 1,
+                      price: 10,
+                      number_of_places: 8,
+                      category: "Formation",
+                      photo: File.open(Rails.root.join("db/fixtures/events/event3pic.jpg"))
+
+puts "Creating participations..."
+
 participation = Participation.new first_name: "Luke",
                                   last_name: "Skywalker",
                                   email: "jedi4ever@mail.com",

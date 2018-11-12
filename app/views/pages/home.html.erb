@@ -74,12 +74,19 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= render 'shared/vertical_card', event: Event.first unless Event.first.nil? %>
+  <div class="container flex-column-center">
+    <div class="grid">
+      <div class="grid-1">
+        <%= render 'shared/big-card-home', event: Event.first %>
+      </div>
+      <div class="grid-2">
+        <%= render 'shared/horizontal_card', event: Event.second %>
+      </div>
+      <div class="grid-3">
+        <%= render 'shared/horizontal_card', event: Event.last %>
       </div>
     </div>
+    <%= link_to "Voir tous les événements", events_path, class: "agenda-link" %>
   </div>
 </div>
 

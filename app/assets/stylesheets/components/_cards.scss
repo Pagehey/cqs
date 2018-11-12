@@ -13,10 +13,6 @@
     background-size: cover;
     border-radius: 3px 3px 0 0;
   }
-  .colored-block {
-    height: 13px;
-    background-color: $light-blue;
-  }
   .vertical-card-content {
     padding: 8px 22px 20px 22px;
     position: relative;
@@ -51,6 +47,11 @@
   }
 }
 
+.colored-block {
+  height: 10px;
+  background-color: $light-blue;
+}
+
 .ribbon {
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -80,3 +81,111 @@
     }
   }
 }
+
+.big-card-home {
+  height: 100%;
+  position: relative;
+  border-radius: 3px;
+  .big-card-image {
+    border-radius: 3px 3px 0 0;
+  }
+  .big-card-content {
+    position: relative;
+    padding: 20px;
+    height: 168px;
+    h4 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+      margin-top: 20px;
+      font-weight: lighter;
+      margin: 10px 0;
+    }
+    a {
+      position: absolute;
+      bottom: 12px;
+      text-decoration: none;
+      color: $light-black;
+      font-weight: bolder;
+    }
+  }
+}
+
+.horizontal-card {
+  position: relative;
+  border-radius: 3px;
+  .horizontal-card-image {
+    flex: 0 0 38%;
+    border-radius: 3px 0 0 3px;
+    position: relative;
+  }
+  .horizontal-card-content {
+    flex: 1 1 auto;
+  }
+  .horizontal-content-infos {
+    padding: 20px;
+    height: 168px;
+    h4 {
+      margin: 0;
+    }
+    p {
+      font-size: 14px;
+      font-weight: lighter;
+      margin: 10px 0;
+    }
+    a {
+      position: absolute;
+      bottom: 12px;
+      text-decoration: none;
+      color: #4E4E4E;
+      font-weight: bolder;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
