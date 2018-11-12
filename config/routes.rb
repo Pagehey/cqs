@@ -4,15 +4,21 @@ Rails.application.routes.draw do
 
   get 'permaculture', to: 'pages#permaculture'
   get 'association', to: 'pages#association'
+  get 'agenda', to: 'pages#agenda'
 
-  resources :events, only: [:index, :show] do
-    resources :participations, only: [:create]
+  localized do
+    resources :events, only: [:show], param: :slug do
+      resources :participations, only: [:create]
+    end
   end
 
   namespace :admin do
     resources :events do
-      get 'close' , to: 'events#close'
-      get 'open'  , to: 'events#open'
+      member do
+        get 'close'
+        get 'open'
+        get 'mark_participations_as_read'
+      end
     end
   end
 end

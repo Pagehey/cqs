@@ -2,7 +2,7 @@
   <div class="navbar-left navigation hidden-xs hidden-sm">
     <ul>
       <li><%= link_to "L'association", association_path %></li>
-      <li><%= link_to "L'agenda", '#' %></li>
+      <li><%= link_to "L'agenda", agenda_path %></li>
     </ul>
   </div>
   <div class="navbar-logo">
@@ -22,9 +22,9 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "L'association", association_path %></li>
+        <li><%= link_to "L'agenda", agenda_path %></li>
         <li><%= link_to "La permaculture", permaculture_path  %></li>
-        <li><a href="#">L'agenda</a></li>
-        <li><a href="#">L'Ecoasis</a></li>
+        <li><%= link_to "L'ecoasis", '#' %></li>
       </ul>
     </div>
   </div>

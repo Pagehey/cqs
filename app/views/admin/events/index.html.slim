@@ -2,13 +2,16 @@
 .admin-header
   = link_to root_path do
     = image_tag 'logo-full.png', class: 'admin-logo'
-  h1 Évènements
+  h1 Événements
   = link_to 'Se déconnecter', destroy_user_session_path, class: 'admin-logout', method: :delete
 .admin-actions
   = link_to admin_events_path do
     h3#gerer.underline Gérer
   = link_to new_admin_event_path do
     h3#creer Créer
+  h5.unread-messages-count
+    - if Participation.unread_by(current_user).count > 0
+      |#{ pluralize Participation.unread_by(current_user).count, 'demande non lue', 'demandes non lues' }
 .container-fluid
   - if @events.empty?
     h2.text-center Il n'y a pas d'événement programmé pour le moment.
@@ -23,4 +26,4 @@
                   = render 'shared/admin_event_card', event: event
       .col-xs-12.col-lg-5
         .participations
-          =render 'shared/participations', event: Event.last
+          h4.text-center *{style: 'margin: 70px auto; width: 80%'} Sélectionnez un événement pour afficher les demandes de participation.

@@ -21,8 +21,8 @@ puts "Creating events..."
 event = Event.create! title: "Default Event",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
-                      start_date: DateTime.now,
-                      end_date: DateTime.now + 1,
+                      start_date: DateTime.now + 20,
+                      end_date: DateTime.now + 21,
                       price: 10,
                       number_of_places: 8,
                       category: "Formation",
@@ -31,32 +31,32 @@ event = Event.create! title: "Default Event",
 event2 = Event.create! title: "Default Event 2",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
-                      start_date: DateTime.now,
-                      end_date: DateTime.now + 1,
+                      start_date: DateTime.now + 30,
+                      end_date: DateTime.now + 32,
                       price: 0,
                       number_of_places: 12,
                       category: "Formation",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
-event3 = Event.create! title: "Default Event 3",
+event3 = Event.create! title: "Default Atelier event 3 avec titre trop long",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
-                      start_date: DateTime.now,
-                      end_date: DateTime.now + 1,
-                      price: 450,
-                      number_of_places: 7,
-                      category: "Formation",
-                      photo: File.open(Rails.root.join("db/fixtures/events/event4pic.jpg"))
+                      start_date: DateTime.now + 14,
+                      end_date: DateTime.now + 14,
+                      price: 0,
+                      number_of_places: 12,
+                      category: "Atelier",
+                      photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
-event4 = Event.create! title: "Inititiation à la permaculture",
+event4 = Event.create! title: "Default Événement event 4 avec titre trop long",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
-                      start_date: DateTime.now,
-                      end_date: DateTime.now + 1,
-                      price: 10,
-                      number_of_places: 8,
-                      category: "Formation",
-                      photo: File.open(Rails.root.join("db/fixtures/events/event3pic.jpg"))
+                      start_date: DateTime.now + 14,
+                      end_date: DateTime.now + 14,
+                      price: 0,
+                      number_of_places: 12,
+                      category: "Événement",
+                      photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
 puts "Creating participations..."
 
@@ -72,16 +72,21 @@ participation2 = Participation.new first_name: "Saruman",
                                   email: "saruRoxXxor@mail.com",
                                   phone_number: '0234567890',
                                   number_of_places_wanted: 1,
-                                  message: "blablablablablablabla\
-                                  blablablablablablablablablablablabla\
-                                  # blablablablablablablablablablabla
-                                  blablablablablablablablablablablablablablabla\
-                                  blablablablablablablablabla"
+                                  message: "Y'a une bande de connards qui a ravagé mon terrain, je dois tout reprendre à zéro ..."
 
-participation.event = event
+participation3 = Participation.new first_name: "Clintis",
+                                  last_name: "Wood",
+                                  email: "plop@mail.com",
+                                  phone_number: '0234567891',
+                                  number_of_places_wanted: 3,
+                                  message: "\"Quand t'es dans le désert ...\" ben y'a pas un chou qui pousse."
+
+participation.event  = event
 participation2.event = event2
+participation3.event = event2
 
 participation.save!
 participation2.save!
+participation3.save!
 
 puts "Finished!"

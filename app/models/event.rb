@@ -1,7 +1,11 @@
 class Event < ApplicationRecord
+  extend Enumerize
+
   has_many :participations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
+
+  enumerize :category, in: ["Atelier", "Formation", "Événement"]
 
   validates :title, presence: { message: :blank}, uniqueness: { message: :exclusion}
   validates :description, presence: { message: :blank}
@@ -12,4 +16,14 @@ class Event < ApplicationRecord
   validates :category, presence: { message: :blank}
   validates :number_of_places, presence: { message: :blank}
   validates :photo, presence: { message: :blank}
+
+  after_save :add_slug
+
+  def add_slug
+    update(slug: to_slug(title))
+  end
+
+  def to_param
+    slug
+  end
 end

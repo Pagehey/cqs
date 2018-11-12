@@ -1,5 +1,6 @@
 class Participation < ApplicationRecord
   belongs_to :event
+
   after_validation :format_phone_number
 
   valid_email_regex = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -19,6 +20,8 @@ class Participation < ApplicationRecord
             format: { with: valid_phone_regex, message: "Ce numéro de téléphone n'est pas valide"},
             unless: :phone_number_missing
 
+  acts_as_readable on: :created_at
+
   private
 
   def contact_missing
@@ -34,6 +37,6 @@ class Participation < ApplicationRecord
   end
 
   def format_phone_number
-    phone_number.gsub(/-|\s/, '').scan(/../).join(' ')
+    self.phone_number = phone_number.gsub(/-|\s/, '').scan(/../).join(' ')
   end
 end
