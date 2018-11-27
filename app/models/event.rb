@@ -5,6 +5,8 @@ class Event < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  after_create :add_slug
+
   enumerize :category, in: ["Atelier", "Formation", "Événement"]
 
   validates :title, presence: { message: :blank}, uniqueness: { message: :exclusion}
@@ -16,8 +18,6 @@ class Event < ApplicationRecord
   validates :category, presence: { message: :blank}
   validates :number_of_places, presence: { message: :blank}
   validates :photo, presence: { message: :blank}
-
-  after_save :add_slug
 
   def add_slug
     update(slug: to_slug(title))
