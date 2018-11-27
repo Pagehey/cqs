@@ -3,18 +3,45 @@
   padding: 0 30px;
   background-color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: sticky;
   top: 0px;
   z-index: 5;
+  transition: .5s;
 }
-
+.navbar-cqs-centered {
+  justify-content: center;
+}
+.navbar-logo {
+  position: absolute;
+  bottom:-50px;
+  left: calc(50% - 50px);
+  transition: .5s;
+}
 .logo {
-  height: 95px;
-  margin: 55px 70px 0px 70px;
+  height: 100px;
+  width: 100px;
+  transition: .5s;
 }
-
+.navbar-logo-down {
+  bottom: -50px;
+  left: calc(50% - 50px);
+}
+.logo-big {
+  height: 100px;
+  width: 100px;
+  }
+@media screen and (min-width: 992px) and (min-height: 800px) {
+  .navbar-logo-down {
+    bottom: -300px;
+    left: calc(50% - 130px);
+  }
+  .logo-big {
+      height: 260px;
+      width: 260px;
+  }
+}
 .navigation {
   ul {
     list-style-type: none;

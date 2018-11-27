@@ -1,13 +1,13 @@
-<div class="navbar-cqs">
+<div class="navbar-cqs <%= 'navbar-cqs-centered' if action_name == 'home' %>">
   <div class="navbar-left navigation hidden-xs hidden-sm">
     <ul>
       <li><%= link_to "L'association", association_path %></li>
       <li><%= link_to "L'agenda", agenda_path %></li>
     </ul>
   </div>
-  <div class="navbar-logo">
+  <div class="navbar-logo <%= 'navbar-logo-down logo-home' if action_name == 'home' %>">
     <%= link_to root_path do %>
-      <%= image_tag "logo-full.png", alt: "Ceux-qui-sèment permaculture logo", class: "logo" %>
+      <%= image_tag "logo-full.png", alt: "Ceux-qui-sèment permaculture logo", class: "logo #{'logo-big' if action_name == 'home'}" %>
     <% end %>
   </div>
   <div class="navbar-right navigation hidden-xs hidden-sm">

@@ -1,7 +1,7 @@
 class ParticipationsController < ApplicationController
   def create
     @participation = Participation.new(participation_params)
-    @event = Event.find(params[:event_id])
+    @event = Event.find_by_slug(params[:event_slug])
     @participation.event = @event
     if @participation.save
       flash.now[:notice] = "demande d'inscription enregistrée"
