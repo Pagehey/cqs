@@ -88,6 +88,7 @@
   border-radius: 3px;
   .big-card-image {
     border-radius: 3px 3px 0 0;
+    width: 348.5px
   }
   .big-card-content {
     position: relative;
@@ -108,6 +109,14 @@
       text-decoration: none;
       color: $light-black;
       font-weight: bolder;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .big-card-home {
+    .big-card-image {
+      width: 300px;
     }
   }
 }

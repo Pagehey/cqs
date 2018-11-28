@@ -25,16 +25,21 @@
   }
 }
 
-
 .home-bullet-points {
-  padding: 80px 30px;
+  padding-top: 20px;
+  padding-bottom: 80px;
+  .bullet-point {
+    margin-bottom: 30px;
+    p {
+      padding: 0 20px;
+    }
+  }
 }
 
 .home-bullet-points-title {
   h2 {
-    margin: 0;
+    margin-bottom: 80px;
   }
-  margin-bottom: 100px;
 }
 
 .underline {
@@ -61,37 +66,13 @@
   padding: 30px 0;
 }
 
-.bullet-point {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
 .bullet-point-picto {
   height: 100px;
-  width: 360px;
+  width: 100%;
   .picto {
     position: relative;
     height: 100px;
-    img {
-      position: absolute;
-      top: 15px;
-      left: 157px;
-    }
-    .picto-back {
-      position: absolute;
-      height: 82px;
-      width: 82px;
-      border-radius: 50%;
-      background-color: $sand;
-      left: 139px;
-    }
   }
-}
-
-.bullet-point-content {
-  padding: 0px 30px;
 }
 
 .home-agenda {
@@ -117,7 +98,8 @@
 }
 
 .home-agenda-box {
-  padding-top: 104px;
+  max-width: 410px;
+  margin: 50px 0;
   h2 {
     color: $light-black;
     font-size: 52px;
@@ -125,17 +107,16 @@
 
   }
   p {
-    padding-top: 50px;
+    padding-top: 30px;
     color: $light-black;
     font-size: 22px;
-    max-width: 480px;
     min-width: 300px;
   }
 }
 
 @media screen and (max-width: 990px) {
   .home-agenda-box {
-    padding: 50px 0px;
+    margin: 0 auto;
     h2 {
       text-align: center;
 
@@ -150,10 +131,11 @@
 
 @media (max-width: 768px) {
   .banner {
-    padding: 0 4px;
+    padding: 0 10px;
   }
 
   .home-agenda-box {
+    padding-top: 50px;
     p {
       padding: 50px 10px;
     }

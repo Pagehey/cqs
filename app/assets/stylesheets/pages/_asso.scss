@@ -5,7 +5,10 @@
   height: 500px;
   width: 100vw;
   text-align: center;
-  padding-top: 100px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   color: white;
   .asso-content {
     display: flex;
@@ -33,22 +36,25 @@
 .ethique-wrapper {
   height: 500px;
   width: 100%;
-  background-image: asset-url('field-dark.JPG');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), asset-url('ethique-wrapper.jpg');
   background-position: center;
   background-size: cover;
   position: relative;
-  p {
-    font-size: 19px;
-    color: white;
+  .ethique-content {
+    background-color: rgba(50, 50, 50, 0.7);
     position: absolute;
-    left: 110px;
-    bottom: 50px;
-    max-width: 500px;
-    min-width: 304px;
-    font-family: 'Roboto';
-  }
-  .bigger {
-    font-size: 36px;
+    bottom: 0;
+    padding: 40px;
+    width: 50%;
+    p {
+
+      font-size: 19px;
+      color: white;
+      font-family: 'Roboto';
+    }
+    .bigger {
+      font-size: 36px;
+    }
   }
 }
 
@@ -56,9 +62,9 @@
   .agenda-content {
     margin: 60px 0;
     .agenda-ellispe {
-      height: 350px;
-      width: 350px;
-      min-width: 350px;
+      height: 300px;
+      width: 300px;
+      min-width: 300px;
       background-image: asset-url('public.jpg');
       background-position: center;
       background-size: cover;
@@ -81,15 +87,7 @@
   }
 }
 
-@media (max-width: 991px) {
-  .ethique-wrapper {
-    p {
-      left: 50%;
-      top: 70%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-  }
+@media screen and (max-width: 991px) {
   .agenda-wrapper {
     .agenda-content {
       flex-direction: column;
@@ -103,32 +101,31 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .ethique-wrapper {
+    .ethique-content {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   .asso-wrapper {
-    padding: 100px 8px 0 8px;
+    align-items: center;
+    padding: 0;
   }
   .values-wrapper {
     padding: 0 8px;
-  }
-  .ethique-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 8px;
-    p {
-      top: 60%;
-    }
   }
   .agenda-description {
     width: auto;
     padding: 0 10px;
     text-align: center;
   }
-
-  .container-cqs {
-    padding: 0;
-  }
-
 }
 
 

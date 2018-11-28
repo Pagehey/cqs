@@ -12,7 +12,7 @@
   <div class="horizontal-card-content">
     <div class="colored-block"></div>
     <div class="horizontal-content-infos">
-      <h4><%= event.title %></h4>
+      <h4><%= truncate event.title, length: 39 %></h4>
       <p><%= prompt_date(event) %></p>
       <%= link_to 'Plus d\'infos', event_path(event), class: 'underline-bis' %>
     </div>
