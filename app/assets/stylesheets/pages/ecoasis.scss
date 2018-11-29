@@ -1,0 +1,67 @@
+.ecoasis {
+  background: center / cover no-repeat linear-gradient(rgba(249, 249, 249, 0.75), rgba(249, 249, 249, 0.75)), asset-url('ecoasis2.jpg');
+  h1 {
+    width: 220px;
+    margin: 60px auto 40px auto;
+  }
+  .ecoasis-img {
+    height: 600px;
+    width: 100%;
+    background: center / contain no-repeat asset-url('ecoasis_page.png');
+  }
+  .ecoasis-text {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .panel {
+    background: none;
+    border: none;
+    box-shadow: none;
+    * {
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    a {
+      color: $light-black;
+      transition: .1s;
+      &:focus {
+        text-decoration: none;
+      }
+      &:hover {
+        color: $orange;
+      }
+      &[aria-expanded='true'] {
+        color: $main-green;
+      }
+    }
+  }
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border: none;
+  height: 400px;
+  overflow: scroll;
+}
+@media screen and (max-width: 991px){
+  .ecoasis {
+    .ecoasis-img {
+      margin-bottom: 40px;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .ecoasis {
+    .ecoasis-img {
+      margin-bottom: 40px;
+      height: 400px;
+    }
+  }
+}
+@media screen and (max-width: 575px){
+  .ecoasis {
+    .ecoasis-img {
+      margin-bottom: 40px;
+      height: 200px;
+    }
+  }
+}

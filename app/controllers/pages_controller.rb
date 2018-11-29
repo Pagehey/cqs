@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def association
   end
 
+  def ecoasis
+  end
+
   def agenda
     if params[:category].present?
       if params[:category] == 'Tous'

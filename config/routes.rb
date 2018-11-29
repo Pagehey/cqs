@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'permaculture', to: 'pages#permaculture'
   get 'association', to: 'pages#association'
   get 'agenda', to: 'pages#agenda'
+  get 'ecoasis', to: 'pages#ecoasis'
 
   localized do
     resources :events, only: [:show], param: :slug do
