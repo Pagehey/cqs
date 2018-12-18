@@ -1,7 +1,6 @@
 import "bootstrap";
 import "../plugins/flatpickr";
-import "../plugins/custom_functions";
-import "../components/agenda_slider";
+import "../components/infinite_slider";
 import "../components/alert";
 import { adminStickyBehavior } from "../components/admin-sticky-behavior";
 import { bindSweetAlertButton } from '../components/sweet-alerts';
