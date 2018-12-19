@@ -2,7 +2,7 @@
   #infinite--slider {
     position: relative;
     height: 500px;
-    overflow: hidden;
+    // overflow: hidden;
     .slider--control {
       z-index: 1;
       position: absolute;
@@ -39,9 +39,25 @@
         &.active ~ .slide {
           transform: translate(100%, 0);
         }
+        &.before-last-right{
+          z-index: -1;
+          transform: translate(200%, 0) !important;
+        }
+        &.before-last-left{
+          z-index: -1;
+          transform: translate(-200%, 0) !important;
+        }
+        &.right-sibling{
+          z-index: 1;
+        }
         div{
           height: 100%;
           width: 100%;
+
+          // TMP
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }

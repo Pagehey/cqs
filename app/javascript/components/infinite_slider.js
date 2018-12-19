@@ -1,40 +1,77 @@
-if (document.querySelector('.slider')) {
-  // Get all the slides
-  let slides = $('.slide');
+if (document.querySelector('.slider')) {
+  let   slides          = getSlides();
+  const slidesNumber    = slides.length;
+  const slidesContainer = document.querySelector('.slider');
 
-  // Move the last slide before the first so the user is able to immediately go backwards
-  slides.first().before(slides.last());
+  // if (slidesNumber > 2) { slides[2].classList.add('before-last-right') };
 
-  $('.slider--control').on('click', function() {
-    // Get all the slides again
-    slides = $('.slide');
-    // Register button
-    let button = $(this);
-    // Register active slide
-    let activeSlide = $('.active');
-    // Next function
-    if (button.attr('id') == 'next') {
-      // Move first slide to the end so the user can keep going forward
-      slides.last().after(slides.first());
-      // Move active class to the right
-      activeSlide.removeClass('active').next('.slide').addClass('active');
-    }
+  // let lastSlide       = slides[slidesNumber - 1].cloneNode(true);
+  // let beforeLastSlide = slides[slidesNumber - 2].cloneNode(true);
 
-    // Previous function
-    if (button.attr('id') == 'previous') {
-      // Move the last slide before the first so the user can keep going backwards
-      slides.first().before(slides.last());
-      // Move active class to the left
-      activeSlide.removeClass('active').prev('.slide').addClass('active');
-    }
-  });
+  // [lastSlide, beforeLastSlide].forEach(slide => {
+  //   slide.classList.remove('before-last-right')
+  // });
 
-  let autoSlide = setInterval(()=>{$('.slider--control.slider--right').click()}, 5000)
+  // beforeLastSlide.classList.add('before-last-left');
 
-  $('#infinite--slider').hover(
-    ()=>{ clearInterval(autoSlide) },
-    ()=>{
-      autoSlide = setInterval(()=>{$('.slider--control.slider--right').click()}, 5000)
-    })
-}
+  // slidesContainer.prepend(lastSlide);
+  // slidesContainer.prepend(beforeLastSlide);
 
+  let slidesArray = Array.from(slides);
+
+  slidesArray.reverse().forEach((slide, index) => {
+    let newSlide = slide.cloneNode(true);
+    newSlide.classList.remove('active');
+    console.log(newSlide)
+    slidesContainer.prepend(newSlide);
+  })
+
+  getSlides()[0].classList.add('before-last-left')
+  getSlides()[getSlides().length -1].classList.add('before-last-right')
+
+  function previous() {
+    let currentSlides = getSlides()
+    let slideToMove   = currentSlides[currentSlides.length - 1].cloneNode(true)
+    let activeSlide   = document.querySelector('.slide.active')
+
+    slideToMove.classList.remove('before-last-right')
+    slideToMove.classList.add('before-last-left')
+    slidesContainer.prepend(slideToMove)
+
+    currentSlides[currentSlides.length - 1].remove()
+    getSlides()[getSlides().length - 1].classList.add('before-last-right')
+    getSlides()[1].classList.remove('before-last-left')
+
+    activeSlide.classList.remove('active')
+    activeSlide.nextSibling.classList.remove('right-sibling')
+    activeSlide.classList.add('right-sibling')
+
+    activeSlide.previousSibling.classList.add('active')
+  };
+
+  function next() {
+    let currentSlides = getSlides()
+    let slideToMove = currentSlides[0].cloneNode(true)
+    let activeSlide = document.querySelector('.slide.active')
+
+    slideToMove.classList.remove('before-last-left')
+    slideToMove.classList.add('before-last-right')
+    slidesContainer.appendChild(slideToMove)
+
+    currentSlides[0].remove()
+    currentSlides[0].classList.add('before-last-left')
+
+    activeSlide.classList.remove('active')
+
+    activeSlide.nextSibling.classList.add('active')
+    activeSlide.nextSibling.nextSibling.classList.remove('before-last-right')
+  };
+
+  function getSlides() {
+    return document.querySelectorAll('.slide')
+  };
+
+  setInterval(()=> { previous() }, 2000);
+  // setTimeout(()=> { previous() }, 2000);
+  // setInterval(()=> { next() }, 2000);
+};
