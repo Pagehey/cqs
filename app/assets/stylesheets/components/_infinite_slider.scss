@@ -2,7 +2,7 @@
   #infinite--slider {
     position: relative;
     height: 500px;
-    // overflow: hidden;
+    overflow: hidden;
     .slider--control {
       z-index: 1;
       position: absolute;
@@ -23,12 +23,15 @@
       margin: 0 auto;
       width: 70%;
       height: 100%;
+      &.initialized {
+        .slide {
+          transition: 0.5s ease;
+        }
+      }
       .slide {
         width: 100%;
         height: 100%;
         position: absolute;
-        transition: 0.5s ease;
-
         // Move slides off to the left by default
         transform: translate(-100%, 0);
         // Set active slide to be in the viewport
@@ -39,11 +42,11 @@
         &.active ~ .slide {
           transform: translate(100%, 0);
         }
-        &.before-last-right{
+        &.far-right{
           z-index: -1;
           transform: translate(200%, 0) !important;
         }
-        &.before-last-left{
+        &.far-left{
           z-index: -1;
           transform: translate(-200%, 0) !important;
         }
