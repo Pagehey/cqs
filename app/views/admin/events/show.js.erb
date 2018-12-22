@@ -1,7 +1,7 @@
 function showParticipations(innerHTML) {
-  const participations = document.querySelector('.participations');
+  const participations     = document.querySelector('.participations');
   participations.innerHTML = innerHTML;
-  const swalButton = document.getElementById('btn-delete-alert');
+  const swalButton         = document.getElementById('btn-delete-alert');
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', () => {
       swal = window.sweetAlert
@@ -45,11 +45,5 @@ function showParticipations(innerHTML) {
     })
   }
 }
-
-// Original render
-// function showParticipations(innerHTML) {
-//   const participations = document.querySelector('.participations');
-//   participations.innerHTML = innerHTML;
-// }
 
 showParticipations("<%= j render 'shared/participations', event: @event %>")
