@@ -1,0 +1,39 @@
+.agenda-main-events
+  #infinite--slider
+    .slider--control.slider--left#previous
+    .slider
+      .slide.one
+        .twelve-principles
+          p <strong>Une matinée par mois</strong>, venez approfondir les <strong>12 principes de conception</strong> de David Holgrem, l'un des deux pères fondateurs de la permaculture. Chaque mois, focus sur un principe de conception, ses domaines d'applications et études de cas pratiques.
+
+          = link_to "Plus d'infos", root_path, class: ['underline-bis', 'link bold']
+      .slide.two
+        div style="background: green"
+          h1 2
+      .slide.three
+        div style="background: yellow"
+          h1 3
+    .slider--control.slider--right#next
+.agenda-header
+  .agenda-header-wrapper
+    h1.underline Agenda
+    p Nous organisons tout au long de l’année des événements, des ateliers ainsi que des journées participatives, au cours desquelles se mêlent apprentissage, découverte et sensibilisation.
+.agenda-main
+  .agenda-search
+    / .agenda-categories
+    p Catégories :
+    = link_to 'Ateliers', agenda_path(category: 'Atelier'), class: 'agenda-filter atelier', remote: true
+    = link_to 'Formations', agenda_path(category: 'Formation'), class: 'agenda-filter formation', remote: true
+    = link_to 'Événements', agenda_path(category: 'Événement'), class: 'agenda-filter événement', remote: true
+    = link_to 'Tous', agenda_path(category: 'Tous'), class: 'agenda-filter tous active-filter', remote: true
+    .agenda-month style="display: none;"
+      p Période :
+        = select_month 14, prompt: '-- mois --'
+  .agenda-events
+    .container
+      .row
+        - if @events.empty?
+          h3 Désolé, nous n'avons aucun événement à vous proposer pour le moment. =(
+        - @events.each do |event|
+          .col-xs-12.col-sm-6.col-md-4
+            = render 'shared/vertical_card', event: event

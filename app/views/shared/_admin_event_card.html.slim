@@ -1,0 +1,25 @@
+.admin-event-card
+  .card--img style="background-image: url('#{cl_image_path event.photo, width: 300, crop: :scale}');"
+    .ribbon
+      .ribbon-top
+        p = l event.start_date, format: '%^b'
+      .ribbon-bottom
+        p = event.start_date.day
+
+  .card--body
+    h4 = event.title
+    .card--date
+      i.fas.fa-calendar-alt.calendar-icon
+      p = prompt_date(event)
+    .event-status id="event-#{event.id}-status"
+      - if event.start_date < Date.today
+        p.inscriptions-closed Événement passé
+      - elsif !event.out_of_places
+        p.inscriptions-opened Inscriptions ouvertes
+      - else
+        p.inscriptions-closed Inscriptions fermées
+  .card--participations
+    .number-of-participation
+      p = pluralize event.participations.count, 'demande', 'demandes'
+      span class="#{'unread' unless event.participations.unread_by(current_user).empty? }" (#{pluralize event.participations.unread_by(current_user).count, 'non lue', 'non lues' })
+    = link_to 'Gérer', admin_event_path(event.id), class: "show-participations-btn", remote: true

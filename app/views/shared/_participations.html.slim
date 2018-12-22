@@ -7,20 +7,20 @@
     - elsif event.out_of_places
       p.inscriptions-closed
         | Inscriptions fermées
-      = link_to '(rouvrir)', open_admin_event_path(event), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
+      = link_to '(rouvrir)', open_admin_event_path(event.id), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
     - else
       p.inscriptions-opened
         | Inscriptions ouvertes
-      = link_to '(clôturer)', close_admin_event_path(event), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
+      = link_to '(clôturer)', close_admin_event_path(event.id), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
   .event-actions
     - unless event.start_date < Date.today
-      = link_to 'Modifier', edit_admin_event_path(event), class: 'btn btn-success'
+      = link_to 'Modifier', edit_admin_event_path(event.id), class: 'btn btn-success'
       input.btn.btn-danger type="button" id="btn-delete-alert" value="Supprimer"
       = link_to 'Supprimer', admin_event_path(event), class: 'hidden', method: :delete, id: 'btn-delete'
 
   h3 #{ pluralize event.participations.count, 'demande', 'demandes' } d'inscription
   - if event.participations.unread_by(current_user).count > 0
-    = link_to '(marquer comme lues)', mark_participations_as_read_admin_event_path(event), class: 'mark-as-read'
+    = link_to '(marquer comme lues)', mark_participations_as_read_admin_event_path(event.id), class: 'mark-as-read'
   - if event.participations.empty?
     p.text-center Il n'y pas encore de demande d'inscription pour cet événement.
   - else
