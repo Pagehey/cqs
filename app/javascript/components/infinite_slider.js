@@ -73,7 +73,7 @@ if (document.querySelector('.slider')) {
     }
   };
 
-  let autoNext = setInterval(()=>{next()}, 5000);
+  let autoNext = setInterval(()=>{next()}, 3000);
   infiniteSlider.addEventListener('mouseenter', ()=>{ clearInterval(autoNext) });
-  infiniteSlider.addEventListener('mouseleave', ()=>{ autoNext = setInterval(()=>{next()}, 5000) });
+  infiniteSlider.addEventListener('mouseleave', ()=>{ autoNext = setInterval(()=>{next()}, 3000) });
 };
