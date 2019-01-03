@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   extend Enumerize
 
+  # to_param :slug
+
   has_many :participations, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
@@ -20,7 +22,7 @@ class Event < ApplicationRecord
   validates :photo, presence: { message: :blank}
 
   def add_slug
-    update(slug: to_slug(title))
+    update(slug: to_slug(id, title))
   end
 
   def to_param

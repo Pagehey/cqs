@@ -4,7 +4,7 @@ function animateLogo() {
   const navbar  = document.querySelector('.navbar-cqs');
   if (logoDiv) {
     document.addEventListener('scroll', (event)=>{
-      if (window.scrollY > 0  && window.innerWidth > 767 && window.innerHeight > 699) {
+      if (window.scrollY > 0  && window.innerWidth > 767 ) {
         logoDiv.classList.remove('navbar-logo-down');
         logoImg.classList.remove('logo-big');
         navbar.classList.remove('navbar-cqs-centered');

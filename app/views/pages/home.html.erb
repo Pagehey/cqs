@@ -1,5 +1,5 @@
 <div class="banner">
-  <h1>Association de promotion de la <span class="green">permaculture</span> sur la Presqu'ile guérandaise</h1>
+  <h1>Association de promotion de la <span class="green">permaculture</span> sur la Presqu'île guérandaise</h1>
 </div>
 <div class="home-bullet-points">
   <div class="container">
@@ -36,7 +36,7 @@
             <h3>La permaculture</h3>
           </div>
           <div class="text-center">
-            <p>La permaculture est une démarche de conception éthique visant à construire des habitats humains durables en imitant le fonctionnement de la nature.</p>
+            <p>La permaculture est une démarche de conception éthique visant à construire des sociétés humaines durables en imitant le fonctionnement de la nature.</p>
             <div class="learn-more">
               <%= link_to 'En savoir plus', permaculture_path %>
             </div>
@@ -47,14 +47,14 @@
         <div class="bullet-point">
           <div class="bullet-point-picto text-center">
             <div class="picto">
-              <%= image_tag "ecoasis-logo.jpg", style: 'height: 100px; border-radius: 10px;' %>
+              <div class="ecoasis-home"></div>
             </div>
           </div>
           <div class="bullet-point-title text-center">
             <h3>L'Écoasis</h3>
           </div>
           <div class="text-center">
-            <p>Fondée en juillet 2016, l’association dispose depuis décembre 2016 d’un espace de démonstration à Guérande, appelé l’Écoasis.</p>
+            <p>Depuis décembre 2016, l'association dispose d’un espace de démonstration à Guérande, appelé l’Écoasis.</p>
             <div class="learn-more">
               <%= link_to 'En savoir plus', ecoasis_path %>
             </div>
@@ -70,22 +70,24 @@
     <div class="home-agenda-box">
       <h2><span class="underline">Agenda</span></h2>
       <p>
-        L’association organise des <strong>événements</strong> tout au long de l’année, d’initiation et d’introduction à la permaculture et à ses <strong>concepts</strong>
+        Tout au long de l'année, l’association organise des <strong>événements</strong> d’initiation et d’introduction à la permaculture et à ses <strong>concepts</strong>
       </p>
     </div>
   </div>
   <div class="container flex-column-center">
-    <div class="grid">
-      <div class="grid-1">
-        <%= render 'shared/big-card-home', event: Event.first %>
+    <% unless Event.all.length < 3 %>
+      <div class="grid">
+        <div class="grid-1">
+          <%= render 'shared/big-card-home', event: Event.first %>
+        </div>
+        <div class="grid-2">
+          <%= render 'shared/horizontal_card', event: Event.second %>
+        </div>
+        <div class="grid-3">
+          <%= render 'shared/horizontal_card', event: Event.last %>
+        </div>
       </div>
-      <div class="grid-2">
-        <%= render 'shared/horizontal_card', event: Event.second %>
-      </div>
-      <div class="grid-3">
-        <%= render 'shared/horizontal_card', event: Event.last %>
-      </div>
-    </div>
+    <% end %>
     <%= link_to "Voir tous les événements", agenda_path, class: "agenda-link" %>
   </div>
 </div>

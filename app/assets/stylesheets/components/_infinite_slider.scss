@@ -1,7 +1,8 @@
 .agenda-main-events {
   #infinite--slider {
     position: relative;
-    height: 500px;
+    min-height: 500px;
+    height: 60vh;
     overflow: hidden;
     .slider--control {
       z-index: 1;
@@ -56,17 +57,12 @@
         div{
           height: 100%;
           width: 100%;
-
-          // TMP
-          display: flex;
-          justify-content: center;
-          align-items: center;
         }
       }
     }
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   #infinite--slider {
     display: none;
   }
