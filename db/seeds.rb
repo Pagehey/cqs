@@ -72,7 +72,7 @@ participation2 = Participation.new first_name: "Saruman",
                                   email: "saruRoxXxor@mail.com",
                                   phone_number: '0234567890',
                                   number_of_places_wanted: 1,
-                                  message: "Y'a une bande d'abrutis qui a ravagé mon terrain, je dois tout reprendre à zéro ..."
+                                  message: "Y'a une bande d'abrutis qui ont ravagé mon terrain, je dois tout reprendre à zéro ..."
 
 participation3 = Participation.new first_name: "Clintis",
                                   last_name: "Wood",
