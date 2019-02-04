@@ -18,7 +18,7 @@ User.create! email: 'admin@cqs.com', password: 'Corps@corps', admin: true
 
 puts "Creating events..."
 
-event = Event.create! title: "Default Event",
+event = Event.create! title: "Approche des modules",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
                       start_date: DateTime.now + 20,
@@ -28,7 +28,7 @@ event = Event.create! title: "Default Event",
                       category: "Formation",
                       photo: File.open(Rails.root.join("db/fixtures/events/event3pic.jpg"))
 
-event2 = Event.create! title: "Default Event 2",
+event2 = Event.create! title: "Mon potager en permaculture",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
                       start_date: DateTime.now + 30,
@@ -38,7 +38,7 @@ event2 = Event.create! title: "Default Event 2",
                       category: "Formation",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
-event3 = Event.create! title: "Default Atelier event 3 avec titre trop long",
+event3 = Event.create! title: "Perm'apéro",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
                       start_date: DateTime.now + 14,
@@ -48,11 +48,11 @@ event3 = Event.create! title: "Default Atelier event 3 avec titre trop long",
                       category: "Atelier",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
-event4 = Event.create! title: "Default Événement event 4 avec titre trop long",
+event4 = Event.create! title: "Journée perm'apprentis",
                       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat commodi quasi, laborum corporis ipsum architecto adipisci? Veritatis minus quam accusamus, tempora commodi voluptatibus iure fugit et qui consectetur rem, cupiditate.",
                       location: "Ecoasis, Guérande",
-                      start_date: DateTime.now + 14,
-                      end_date: DateTime.now + 14,
+                      start_date: DateTime.now - 14,
+                      end_date: DateTime.now - 14,
                       price: 0,
                       number_of_places: 12,
                       category: "Événement",
@@ -72,7 +72,7 @@ participation2 = Participation.new first_name: "Saruman",
                                   email: "saruRoxXxor@mail.com",
                                   phone_number: '0234567890',
                                   number_of_places_wanted: 1,
-                                  message: "Y'a une bande de connards qui a ravagé mon terrain, je dois tout reprendre à zéro ..."
+                                  message: "Y'a une bande d'abrutis qui a ravagé mon terrain, je dois tout reprendre à zéro ..."
 
 participation3 = Participation.new first_name: "Clintis",
                                   last_name: "Wood",
