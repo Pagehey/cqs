@@ -25,7 +25,7 @@ event = Event.create! title: "Approche des modules",
                       end_date: DateTime.now + 21,
                       price: 10,
                       number_of_places: 8,
-                      category: "Formation",
+                      category: "formation",
                       photo: File.open(Rails.root.join("db/fixtures/events/event3pic.jpg"))
 
 event2 = Event.create! title: "Mon potager en permaculture",
@@ -35,7 +35,7 @@ event2 = Event.create! title: "Mon potager en permaculture",
                       end_date: DateTime.now + 32,
                       price: 0,
                       number_of_places: 12,
-                      category: "Formation",
+                      category: "formation",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
 event3 = Event.create! title: "Perm'apéro",
@@ -45,7 +45,7 @@ event3 = Event.create! title: "Perm'apéro",
                       end_date: DateTime.now + 14,
                       price: 0,
                       number_of_places: 12,
-                      category: "Atelier",
+                      category: "atelier",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
 event4 = Event.create! title: "Journée perm'apprentis",
@@ -55,7 +55,7 @@ event4 = Event.create! title: "Journée perm'apprentis",
                       end_date: DateTime.now - 14,
                       price: 0,
                       number_of_places: 12,
-                      category: "Événement",
+                      category: "evenement",
                       photo: File.open(Rails.root.join("db/fixtures/events/event2pic.jpg"))
 
 puts "Creating participations..."

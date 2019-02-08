@@ -14,18 +14,15 @@ class PagesController < ApplicationController
   end
 
   def agenda
-    if params[:category].present?
-      if params[:category] == 'Tous'
-        @events = Event.where('start_date > ?', Date.today).order(:start_date)
-      else
-        @events = Event.where(category: params[:category]).order(:start_date)
-      end
-    else
-      @events = Event.where('start_date > ?', Date.today).order(:start_date)
+    @events = Event.where('start_date > ?', Date.today).order(:start_date)
+
+    if %w[atelier evenement formation].include? params[:category]
+      @events = @events.with_category params[:category]
     end
-  end
-  respond_to do |format|
-    format.html { redirect_to agenda_path }
-    format.js
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end

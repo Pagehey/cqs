@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   extend Enumerize
 
-  # to_param :slug
+  to_param :slug
 
   has_many :participations, dependent: :destroy
 
@@ -9,7 +9,7 @@ class Event < ApplicationRecord
 
   after_create :add_slug
 
-  enumerize :category, in: ["Atelier", "Formation", "Événement"]
+  enumerize :category, in: %w[atelier formation evenement], scope: true
 
   validates :title, presence: { message: :blank}, uniqueness: { message: :exclusion}
   validates :description, presence: { message: :blank}
@@ -22,10 +22,6 @@ class Event < ApplicationRecord
   validates :photo, presence: { message: :blank}
 
   def add_slug
-    update(slug: to_slug(id, title))
-  end
-
-  def to_param
-    slug
+    update(slug: to_slug(title))
   end
 end

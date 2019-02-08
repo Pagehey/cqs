@@ -1,9 +1,17 @@
-module CardDateHelper
+module CardHelper
   def prompt_date(event)
     if event.start_date.day == event.end_date.day
       return raw "#{one_day_(event)}"
     else
       return raw "#{several_days_(event)}"
+    end
+  end
+
+  def beautiful_category(category)
+    case category
+    when "atelier"   then "Atelier"
+    when "evenement" then "Événement"
+    when "formation" then "Formation"
     end
   end
 

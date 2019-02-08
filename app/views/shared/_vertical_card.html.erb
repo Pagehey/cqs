@@ -1,13 +1,13 @@
 <div class="vertical-card">
   <div class="vertical-card-image" style="background-image: url('<%= cl_image_path event.photo, width: 600, crop: :scale %>')">
   </div>
-  <span class="card-category <%= event.category.downcase %>"><%= event.category %></span>
+  <span class="card-category <%= event.category.downcase %>"><%= beautiful_category event.category %></span>
   <div class="ribbon">
     <div class="ribbon-top">
-      <p><%= I18n.localize(event.start_date, format: '%^b') %></p>
+      <p><%= l event.start_date, format: '%b' %></p>
     </div>
     <div class="ribbon-bottom">
-      <p><%= event.start_date.day %></p>
+      <p><%= event.start_date.day%></p>
     </div>
   </div>
   <div class="colored-block">

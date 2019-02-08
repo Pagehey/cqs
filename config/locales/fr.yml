@@ -35,19 +35,18 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    -
-    - jan.
-    - fév.
-    - mar.
-    - avr.
-    - mai
-    - juin
-    - juil.
-    - août
-    - sept.
-    - oct.
-    - nov.
-    - déc.
+    - JAN
+    - FÉV
+    - MAR
+    - AVR
+    - MAI
+    - JUIN
+    - JUIL
+    - AOÛT
+    - SEPT
+    - OCT
+    - NOV
+    - DÉC
     day_names:
     - dimanche
     - lundi
