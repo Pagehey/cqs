@@ -8,8 +8,8 @@ class Admin::EventsController < ApplicationController
   end
 
   def show
+    @unread_count = @event.participations.unread_by(current_user).count
     respond_to do |format|
-      format.html { redirect_to event_path @event }
       format.js
     end
   end
