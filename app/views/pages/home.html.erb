@@ -75,7 +75,7 @@
     </div>
   </div>
   <div class="container flex-column-center">
-    <% @first_three_events < 3 %>
+    <% unless @first_three_events.length < 3 %>
       <div class="grid">
         <div class="grid-1">
           <%= render 'shared/big-card-home', event: @first_three_events.first %>
