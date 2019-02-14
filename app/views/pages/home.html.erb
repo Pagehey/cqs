@@ -75,16 +75,16 @@
     </div>
   </div>
   <div class="container flex-column-center">
-    <% unless Event.all.length < 3 %>
+    <% @first_three_events < 3 %>
       <div class="grid">
         <div class="grid-1">
-          <%= render 'shared/big-card-home', event: Event.first %>
+          <%= render 'shared/big-card-home', event: @first_three_events.first %>
         </div>
         <div class="grid-2">
-          <%= render 'shared/horizontal_card', event: Event.second %>
+          <%= render 'shared/horizontal_card', event: @first_three_events.second %>
         </div>
         <div class="grid-3">
-          <%= render 'shared/horizontal_card', event: Event.last %>
+          <%= render 'shared/horizontal_card', event: @first_three_events.last %>
         </div>
       </div>
     <% end %>

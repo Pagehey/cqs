@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 # skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @first_three_events = Event.order(:start_date).first(3)
   end
 
   def permaculture
