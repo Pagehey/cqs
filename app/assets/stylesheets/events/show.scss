@@ -96,3 +96,19 @@
     height: auto !important;
   }
 }
+.event-not-found {
+  padding: 48px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  min-height: calc(100vh - 80px - 140px);
+  .pic {
+    height: 120px;
+    margin-top: 24px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: asset-url('graine.png')
+  }
+}

@@ -12,5 +12,7 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:slug])
+    rescue ActiveRecord::RecordNotFound
+      render :event_not_found
   end
 end
