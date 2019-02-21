@@ -1,12 +1,13 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :rememberable, :validatable
 
   acts_as_reader
 
   def self.reader_scope
     where(admin: true)
+  end
+
+  def is_admin?
+    admin
   end
 end

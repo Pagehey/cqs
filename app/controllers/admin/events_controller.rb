@@ -4,11 +4,11 @@ class Admin::EventsController < ApplicationController
   before_action :set_event, except: [:index, :new, :create]
 
   def index
-    @events = Event.all.order(start_date: :desc)
+    @events = Event.order(start_date: :desc).includes(:participations)
   end
 
   def show
-    @unread_count = @event.participations.unread_by(current_user).count
+    @unread_count = @event.participations.unread_by(current_user).size
     respond_to do |format|
       format.js
     end
@@ -21,10 +21,10 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash.now[:notice] = "Événement créé avec succès."
+      flash[:notice] = "Événement créé avec succès."
       redirect_to admin_events_path
     else
-      flash.now[:alert] = "Merci d'ajouter une photo à l'événement." if @event.photo.blank?
+      flash[:alert] = "Merci d'ajouter une photo à l'événement." if @event.photo.blank?
       render :new
     end
   end
@@ -34,7 +34,7 @@ class Admin::EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      flash.now[:notice] = "Événement modifié avec succès."
+      flash[:notice] = "Événement modifié avec succès."
       redirect_to admin_events_path
     else
       render :edit
@@ -42,7 +42,7 @@ class Admin::EventsController < ApplicationController
   end
 
   def destroy
-    flash.now[:notice] = "L'événement \"#{@event.title}\" a été supprimé avec succès."
+    flash[:notice] = "L'événement \"#{@event.title}\" a été supprimé avec succès."
     @event.destroy
     redirect_to admin_events_path
   end
@@ -90,8 +90,8 @@ class Admin::EventsController < ApplicationController
   end
 
   def is_admin?
-    unless current_user.admin
-      flash.now[:alert] = "Vous devez avoir un compte administrateur pour accéder à cette page."
+    unless current_user.is_admin?
+      flash[:alert] = "Vous devez avoir un compte administrateur pour accéder à cette page."
       redirect_to root_path
     end
   end

@@ -14,8 +14,6 @@ User.destroy_all
 
 puts "Creating default admin..."
 
-User.create! email: 'admin@cqs.com', password: 'Corps@corps', admin: true
-
 puts "Creating events..."
 
 event = Event.create! title: "Approche des modules",
