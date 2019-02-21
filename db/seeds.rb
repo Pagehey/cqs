@@ -11,9 +11,6 @@ Participation.destroy_all
 Event.destroy_all
 User.destroy_all
 
-
-puts "Creating default admin..."
-
 puts "Creating events..."
 
 event = Event.create! title: "Approche des modules",
