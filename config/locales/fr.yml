@@ -1,5 +1,6 @@
 fr:
   routes:
+    new: créer
     events: événements
   activerecord:
     attributes:

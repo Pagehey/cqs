@@ -20,6 +20,7 @@
         p.inscriptions-closed Inscriptions fermées
   .card--participations
     .number-of-participation
-      p = pluralize event.participations.count, 'demande', 'demandes'
-      span class="#{'unread' unless event.participations.unread_by(current_user).empty? }" (#{pluralize event.participations.unread_by(current_user).count, 'non lue', 'non lues' })
+      p = pluralize event.participations.size, 'demande', 'demandes'
+      span class="#{'unread' if event.participations.unread_by(current_user).size > 0 }"
+        |(#{pluralize event.participations.unread_by(current_user).size, 'non lue', 'non lues' })
     = link_to 'Gérer', admin_event_path(event), class: "show-participations-btn", remote: true
