@@ -106,11 +106,14 @@
   }
 }
 .main-events--event {
-  padding: 0 24px;
+  margin: 24px 0;
   .content {
     margin: 0 auto;
     max-width: 710px;
-    padding: 24px 0;
+    padding: 24px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     .head {
       padding: 16px auto;
       display: flex;
@@ -118,6 +121,9 @@
       margin-bottom: 16px;
       h3 {
         margin-top: auto;
+      }
+      .img-event {
+        width: 200px;
       }
     }
     .body {
