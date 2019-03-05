@@ -1,25 +1,26 @@
 = content_for(:title, action_name.capitalize)
-
-.agenda-main-events
-  #infinite--slider
-    .slider--control.slider--left#previous
-    .slider
-      .slide
-        .twelve-principles
-          p <strong>Une matinée par mois</strong>, venez approfondir les <strong>12 principes de conception</strong> de David Holgrem, l'un des deux pères fondateurs de la permaculture. Chaque mois, focus sur un principe de conception, ses domaines d'applications et études de cas pratiques.
-
-          = link_to "Plus d'infos", root_path, class: ['underline-bis', 'link bold']
-      .slide
-        .permapprenti
-          p
-      .slide
-        div style="background: yellow"
-          h1 3
-    .slider--control.slider--right#next
 .agenda-header
   .agenda-header-wrapper
     h1.underline Agenda
     p Nous organisons tout au long de l’année des événements, des ateliers ainsi que des journées participatives, au cours desquelles se mêlent apprentissage, découverte et sensibilisation.
+  .agenda-main-events
+    .container
+      .row
+        .col-xs-12.col-sm-6.col-md-4
+          .agenda-main-event.text-center
+            = image_tag 'jardin.jpg', class: 'img-event'
+            h5 Jardin collectif
+            = link_to "Plus d'infos", "#{main_events_path}#jardin", class: 'underline link bold'
+        .col-xs-12.col-sm-6.col-md-4
+          .agenda-main-event.text-center
+            = image_tag 'permapprentis.jpg', class: 'img-event'
+            h5 Journées perm'apprentis
+            = link_to "Plus d'infos", "#{main_events_path}#permapprentis", class: 'underline link bold'
+        .col-xs-12.col-sm-12.col-md-4
+          .agenda-main-event.text-center
+            = image_tag 'approche.jpg', class: 'img-event'
+            h5 Approche de la permaculture
+            = link_to "Plus d'infos", "#{main_events_path}#approche", class: 'underline link bold'
 .agenda-main
   .agenda-search
     / .agenda-categories

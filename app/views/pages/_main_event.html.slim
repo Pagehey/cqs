@@ -1,0 +1,10 @@
+.main-events--event style="position: relative;"
+  div id="#{id}" style="position: absolute; left: 0; top: -80px;"
+  .content
+    .head
+      h3 = title
+      = image_tag picture, class: 'img-event'
+    .body
+      - description.each do |paragraph|
+        p = paragraph
+      end

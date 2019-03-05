@@ -21,6 +21,8 @@ class Event < ApplicationRecord
   validates :number_of_places, presence: { message: :blank}
   validates :photo, presence: { message: :blank}
 
+  scope :upcoming, -> { where('start_date > ?', Date.today).order(:start_date) }
+
   def add_slug
     update(slug: to_slug(title))
   end
