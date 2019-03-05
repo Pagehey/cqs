@@ -106,6 +106,7 @@
   }
 }
 .main-events--event {
+  padding: 0 24px;
   .content {
     margin: 0 auto;
     max-width: 710px;
@@ -123,6 +124,17 @@
       p {
         text-align: justify;
       }
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .main-events--event {
+    .head {
+      h3 {
+        text-align: center;
+      }
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
