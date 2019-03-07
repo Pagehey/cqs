@@ -26,7 +26,7 @@
   - else
     .container-fluid
       .row
-        - event.participations.each do |participation|
+        - event.participations.order(created_at: :desc).each do |participation|
           .col-xs-12.col-sm-6.col-lg-12
             .participation-box
               - if participation.unread?(current_user)
