@@ -6,11 +6,11 @@
   .agenda-main-events
     .container
       .row
-        / .col-xs-12.col-sm-6.col-md-4
-        /   .agenda-main-event.text-center
-        /     = image_tag 'jardin.jpg', class: 'img-event'
-        /     h5 Jardin collectif
-        /     = link_to "Plus d'infos", "#{main_events_path}#jardin", class: 'underline link bold'
+        .col-xs-12.col-sm-6.col-md-4
+          .agenda-main-event.text-center
+            = image_tag 'jardin.jpg', class: 'img-event'
+            h5 Jardin collectif
+            = link_to "Plus d'infos", "#{main_events_path}#jardin", class: 'underline link bold'
         .col-xs-12.col-sm-offset-2.col-sm-4
           .agenda-main-event.text-center
             = image_tag 'permapprentis.jpg', class: 'img-event'
