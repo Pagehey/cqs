@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @first_three_events = Event.order(:start_date).first(3)
+    @first_three_events = Event.upcoming.first(3)
   end
 
   def permaculture

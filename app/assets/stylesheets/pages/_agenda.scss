@@ -78,7 +78,10 @@
 .agenda-events {
   min-height: 200px;
   h3 {
+    margin: 0 auto;
     padding: 0 30px;
+    max-width: 600px;
+    text-align: center;
   }
 }
 .agenda-main-events {
