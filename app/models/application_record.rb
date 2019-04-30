@@ -3,6 +3,6 @@ class ApplicationRecord < ActiveRecord::Base
 
   def to_slug(string)
     string = string.parameterize.truncate(80, omission: '')
-    "#{string}"
+    string.to_s
   end
 end

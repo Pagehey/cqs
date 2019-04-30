@@ -7,7 +7,7 @@ class User < ApplicationRecord
     where(admin: true)
   end
 
-  def is_admin?
+  def admin?
     admin
   end
 end

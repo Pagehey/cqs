@@ -8,34 +8,58 @@ AllCops:
     - 'support/**/*'
     - 'tmp/**/*'
     - 'test/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
 
-ConditionalAssignment:
-  Enabled: false
-StringLiterals:
-  Enabled: false
-RedundantReturn:
-  Enabled: false
-Documentation:
-  Enabled: false
-WordArray:
-  Enabled: false
 AbcSize:
   Enabled: false
-MutableConstant:
-  Enabled: false
-SignalException:
+Bundler/OrderedGems:
   Enabled: false
 Casecmp:
   Enabled: false
+ConditionalAssignment:
+  Enabled: false
 CyclomaticComplexity:
   Enabled: false
-MethodMissing:
+Documentation:
+  Enabled: false
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+Layout/DotPosition:
+  EnforcedStyle: trailing
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+LineLength:
+  Max: 120
+MethodMissingSuper:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+MissingRespondToMissing:
+  Enabled: false
+MutableConstant:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+SignalException:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
-LineLength:
-  Max: 120
-Style/EmptyMethod:
+Style/Lambda:
+  EnforcedStyle: literal
+StringLiterals:
   Enabled: false
-Bundler/OrderedGems:
+Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+RedundantReturn:
+  Enabled: false
+WordArray:
   Enabled: false

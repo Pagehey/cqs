@@ -22,6 +22,6 @@ class ParticipationsController < ApplicationController
       :email,
       :number_of_places_wanted,
       :message
-      )
+    )
   end
 end

@@ -8,16 +8,16 @@ class Participation < ApplicationRecord
 
   validates :first_name, presence: { message: 'Veuillez renseigner votre prénom' }
   validates :last_name, presence: { message: 'Veuillez renseigner votre nom' }
-  validates :number_of_places_wanted, presence: { message: 'Veuillez renseigner le nombre de place(s) souhaitée(s)'}
+  validates :number_of_places_wanted, presence: { message: 'Veuillez renseigner le nombre de place(s) souhaitée(s)' }
 
   validates :email,
             presence: { message: "Vous devez renseigner au moins un numéro de téléphone ou une adresse mail" },
-            if: :contact_missing
+            if:       :contact_missing
   validates :email,
             format: { with: valid_email_regex, message: "Adresse mail non valide" },
             unless: :email_missing
   validates :phone_number,
-            format: { with: valid_phone_regex, message: "Ce numéro de téléphone n'est pas valide"},
+            format: { with: valid_phone_regex, message: "Ce numéro de téléphone n'est pas valide" },
             unless: :phone_number_missing
 
   acts_as_readable on: :created_at

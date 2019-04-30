@@ -16,16 +16,13 @@ class PagesController < ApplicationController
   end
 
   def agenda
-    @events = Event.upcoming
-
-    if %w[atelier evenement formation].include? params[:category]
-      @events = @events.with_category params[:category]
-    end
+    @events         = Event.upcoming
+    event_catgories = Event.category.values
+    @events         = @events.with_category params[:category] if event_catgories.include? params[:category]
 
     respond_to do |format|
       format.html
       format.js
     end
   end
-
 end

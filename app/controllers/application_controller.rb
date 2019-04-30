@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    if resource.is_a?(User) && resource.is_admin?
+    if resource.is_a?(User) && resource.admin?
       admin_events_path
     else
       flash[:notice] = "Vous devez avoir un compte administrateur pour accéder à cette page."
