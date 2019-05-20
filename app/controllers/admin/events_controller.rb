@@ -101,7 +101,7 @@ module Admin
     end
 
     def ensure_user_is_admin
-      return unless current_user.admin?
+      return if current_user.admin?
 
       flash[:alert] = "Vous devez avoir un compte administrateur pour accéder à cette page."
 
