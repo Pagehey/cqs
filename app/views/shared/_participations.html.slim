@@ -13,10 +13,10 @@
         | Inscriptions ouvertes
       = link_to '(clôturer)', close_admin_event_path(event.id), remote: true, data: { confirm: 'Êtes-vous sûr ?'}
   .event-actions
-    - unless event.start_date < Date.today
-      = link_to 'Modifier', edit_admin_event_path(event.id), class: 'btn btn-success'
-      input.btn.btn-danger type="button" id="btn-delete-alert" value="Supprimer"
-      = link_to 'Supprimer', admin_event_path(event), class: 'hidden', method: :delete, id: 'btn-delete'
+    / - unless event.start_date < Date.today
+    = link_to 'Modifier', edit_admin_event_path(event.id), class: 'btn btn-success'
+    input.btn.btn-danger type="button" id="btn-delete-alert" value="Supprimer"
+    = link_to 'Supprimer', admin_event_path(event), class: 'hidden', method: :delete, id: 'btn-delete'
 
   h3 #{ pluralize event.participations.count, 'demande', 'demandes' } d'inscription
   p.text-center = event.places_left
@@ -47,3 +47,10 @@
 
               .participation-message
                 p = participation.message
+
+              .participation-delete.text-right
+                = link_to admin_event_participation_path(event, participation),
+                          style: 'margin-right: 2px;',
+                          method: :delete,
+                          data: { confirm: 'Êtes-vous sûr ?' } do
+                  i.far.fa-trash-alt.text-danger

@@ -14,29 +14,13 @@ Rails.application.routes.draw do
   get 'ecoasis', to: 'pages#ecoasis'
   get 'evenements-principaux', to: 'pages#main_events', as: 'main_events'
 
-  # localized do
-  #   resources :events, only: [:show], param: :slug do
-  #     resources :participations, only: [:create]
-  #   end
-
-  #   namespace :admin do
-  #     resources :events do
-  #       member do
-  #         get 'close'
-  #         get 'open'
-  #         get 'mark_participations_as_read'
-  #       end
-  #     end
-  #   end
-
-  # end
-
   resources :events, only: [:show], path: 'evenements', param: :slug do
     resources :participations, only: [:create]
   end
 
   namespace :admin do
     resources :events, path: 'evenements' do
+      resources :participations, only: [:destroy]
       member do
         get 'close'
         get 'open'
