@@ -10,6 +10,7 @@ module Admin
 
     def show
       @unread_count = @event.participations.unread_by(current_user).size
+      @event        = EventPresenter.new(@event)
 
       respond_to do |format|
         format.js

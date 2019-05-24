@@ -30,7 +30,7 @@
             <i class="fas fa-users"></i>
           </div>
           <p class="detail-text">
-            <%= pluralize @event.number_of_places, 'place disponible', 'places disponibles' %>
+            <%= @event.places_left %>
           </p>
         </div>
       </div>

@@ -10,6 +10,7 @@ public/assets
 public/packs
 public/packs-test
 public/updloads
+public/tmp/*
 node_modules
 yarn-error.log
 .byebug_history

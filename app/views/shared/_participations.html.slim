@@ -18,9 +18,10 @@
       input.btn.btn-danger type="button" id="btn-delete-alert" value="Supprimer"
       = link_to 'Supprimer', admin_event_path(event), class: 'hidden', method: :delete, id: 'btn-delete'
 
-  h3 #{ pluralize @unread_count, 'demande', 'demandes' } d'inscription
+  h3 #{ pluralize event.participations.count, 'demande', 'demandes' } d'inscription
+  p.text-center = event.places_left
   - if @unread_count > 0
-    = link_to pluralize(@unread_count, "marquer comme lue", "marquer comme"), mark_participations_as_read_admin_event_path(event.id), class: 'mark-as-read'
+    = link_to pluralize(@unread_count, "marquer comme lue", "marquer comme lues"), mark_participations_as_read_admin_event_path(event.id), class: 'mark-as-read'
   - if event.participations.empty?
     p.text-center Il n'y pas encore de demande d'inscription pour cet événement.
   - else
