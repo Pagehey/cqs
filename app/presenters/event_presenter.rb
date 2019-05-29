@@ -2,7 +2,7 @@ class EventPresenter < BasePresenter
   include_view_helpers
 
   def places_left
-    return 'Pas de limites de place' unless __getobj__.number_of_places
+    return 'Nombre de place illimitées' if __getobj__.number_of_places.nil? || __getobj__.number_of_places.zero?
 
     places_left = __getobj__.number_of_places - __getobj__.participations.count
 

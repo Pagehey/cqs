@@ -1,7 +1,9 @@
 <div class="event-show-banner" style="background-image: linear-gradient(rgba(100,100,100,.2), rgba(100,100,100,.2)), url('<%= cl_image_path @event.photo %>')">
-  <h1 class="event-show-title underline"><%= @event.title %></h1>
 </div>
 <div class="event-show-details">
+  <div class="event-show-title">
+    <h1 class="text-center underline"><%= @event.title %></h1>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
