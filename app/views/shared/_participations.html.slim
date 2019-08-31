@@ -39,11 +39,13 @@
 
               .participation-contact
                 p.phone_number
-                  i.fas.fa-phone
-                  = participation.phone_number
+                  - if participation.phone_number.present?
+                    i.fas.fa-phone
+                    = participation.phone_number
                 p.email
-                  i.fas.fa-at
-                  = participation.email
+                  - if participation.email.present?
+                    i.fas.fa-at
+                    = participation.email
 
               .participation-message
                 p = participation.message
