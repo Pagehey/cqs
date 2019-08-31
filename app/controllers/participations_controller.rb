@@ -1,11 +1,12 @@
 class ParticipationsController < ApplicationController
   def create
-    @participation       = Participation.new(participation_params)
-    @event               = Event.find(params[:event_slug])
-    @participation.event = @event
+    @event         = Event.find(params[:event_slug])
+    @event         = EventPresenter.new(@event)
+    @participation = @event.participations.build(participation_params)
 
     if @participation.save
       flash[:notice] = "demande d'inscription envoyée"
+
       redirect_to agenda_path
     else
       render 'events/show'

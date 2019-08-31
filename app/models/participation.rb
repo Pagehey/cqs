@@ -25,18 +25,20 @@ class Participation < ApplicationRecord
   private
 
   def contact_missing
-    email.empty? && phone_number.empty?
+    !email.present? && !phone_number.present?
   end
 
   def phone_number_missing
-    phone_number.empty?
+    !phone_number.present?
   end
 
   def email_missing
-    email.empty?
+    !email.present?
   end
 
   def format_phone_number
+    return if phone_number_missing
+
     self.phone_number = phone_number.gsub(/-|\s/, '').scan(/../).join(' ')
   end
 end
