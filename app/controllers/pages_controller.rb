@@ -12,6 +12,10 @@ class PagesController < ApplicationController
   def ecoasis
   end
 
+  def nous_rejoindre
+    @members = Member.all
+  end
+
   def main_events
   end
 

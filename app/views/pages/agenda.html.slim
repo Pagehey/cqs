@@ -6,37 +6,44 @@
   .agenda-main-events
     .container
       .row
-        .col-xs-12.col-sm-6.col-md-4
+        .col-xs-12.col-sm-6.col-md-3
           .agenda-main-event.text-center
             = image_tag 'jardin.jpg', class: 'img-event'
             h5 Jardin collectif
-            = link_to "Plus d'infos", "#{main_events_path}#jardin", class: 'underline link bold'
-        .col-xs-12.col-sm-6.col-md-4
+            = link_to "Plus d'infos", main_events_path(anchor: 'jardin'), class: 'underline link bold'
+        .col-xs-12.col-sm-6.col-md-3
           .agenda-main-event.text-center
             = image_tag 'permapprentis.jpg', class: 'img-event'
             h5 Journées perm'apprentis
-            = link_to "Plus d'infos", "#{main_events_path}#permapprentis", class: 'underline link bold'
-        .col-xs-12.col-sm-12.col-md-4
+            = link_to "Plus d'infos", main_events_path(anchor: 'permapprentis'), class: 'underline link bold'
+        .col-xs-12.col-sm-6.col-md-3
           .agenda-main-event.text-center
             = image_tag 'approche.jpg', class: 'img-event'
             h5 Approche de la permaculture
-            = link_to "Plus d'infos", "#{main_events_path}#approche", class: 'underline link bold'
-.agenda-main
-  .agenda-search
-    / .agenda-categories
-    p Catégories :
-    = link_to 'Ateliers', agenda_path(category: 'atelier'), class: 'agenda-filter atelier', remote: true
-    = link_to 'Formations', agenda_path(category: 'formation'), class: 'agenda-filter formation', remote: true
-    = link_to 'Événements', agenda_path(category: 'evenement'), class: 'agenda-filter evenement', remote: true
-    = link_to 'Tous', agenda_path(category: 'tous'), class: 'agenda-filter tous active-filter', remote: true
-    .agenda-month style="display: none;"
-      p Période :
-        = select_month 14, prompt: '-- mois --'
-  .agenda-events
-    .container
-      .row
-        - if @events.empty?
-          h3 Désolé, nous n'avons aucun événement à vous proposer pour le moment. Revenez plus tard ! =)
-        - @events.each do |event|
-          .col-xs-12.col-sm-6.col-md-4
-            = render 'shared/vertical_card', event: event
+            = link_to "Plus d'infos", main_events_path(anchor: 'approche'), class: 'underline link bold'
+        .col-xs-12.col-sm-6.col-md-3
+        .agenda-main-event.text-center
+          = image_tag 'permapero.jpg', class: 'img-event'
+          h5 Perm'apero
+          = link_to "Plus d'infos", main_events_path(anchor: 'permapero'), class: 'underline link bold'
+
+- if @events.any?
+  .agenda-main
+    .agenda-search
+      / .agenda-categories
+      p Catégories :
+      = link_to 'Ateliers', agenda_path(category: 'atelier'), class: 'agenda-filter atelier', remote: true
+      = link_to 'Formations', agenda_path(category: 'formation'), class: 'agenda-filter formation', remote: true
+      = link_to 'Événements', agenda_path(category: 'evenement'), class: 'agenda-filter evenement', remote: true
+      = link_to 'Tous', agenda_path(category: 'tous'), class: 'agenda-filter tous active-filter', remote: true
+      .agenda-month style="display: none;"
+        p Période :
+          = select_month 14, prompt: '-- mois --'
+    .agenda-events
+      .container
+        .row
+          - if @events.empty?
+            h3 Désolé, nous n'avons aucun événement à vous proposer pour le moment. Revenez plus tard ! =)
+          - @events.each do |event|
+            .col-xs-12.col-sm-6.col-md-4
+              = render 'shared/vertical_card', event: event

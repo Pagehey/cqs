@@ -1,0 +1,29 @@
+= content_for(:title, action_name.capitalize)
+
+.container-fluid.nous-rejoindre
+  .text-center
+    h1.underline NOUS REJOINDRE
+  .nous-rejoindre-header
+    h2 L'équipe des harmonisateurs
+    p Le « cercle des harmonisateurs » est le noyau central des adhérents de l'association où se rêvent, se proposent, se discutent et se mettent en place les idées, les projets, les actions.
+    p Nous fonctionnons en collégialité, c'est-à-dire que nous assurons collectivement la gestion et la responsabilité de l'association. Nous nous réunissons une fois par mois pour faire vivre le projet, assurer la création et le suivi des activités. Chacun est libre de s'investir comme il le souhaite avec le temps dont il dispose, d'être force d'initiative, de venir pour apprendre, partager ses passions et ses compétences, expérimenter...Ce rendez-vous mensuel est avant tout et surtout un temps de convivialité. Car selon un autre principe de la permaculture : si c'est pas fun, c'est pas durable !
+    p Le cercle est ouvert toute l'année, soyez libre de devenir membre et de nous rejoindre à tout moment !N'hésitez pas à nous contacter et à nous rencontrer !
+
+  .row
+    .col-xs-12.col-md-6
+      .nous-rejoindre-img
+    .col-xs-12.col-md-6
+      .nous-rejoindre-text
+        #accordion.panel-group role="tablist" aria-multiselectable="true"
+          - @members.each_with_index do |member, index|
+            .panel.panel-default
+              .panel-heading role="tab" id="heading#{member.parameterized_name}"
+                h4.panel-title
+                  a[role="button"
+                    data-toggle="collapse" data-parent="#accordion"
+                    href="#collapse#{member.parameterized_name}"
+                    aria-expanded="#{ index.zero? }"
+                    aria-controls="collapse#{member.parameterized_name}"] = member.name
+              .panel-collapse.collapse class="#{ 'in' if index.zero? }" role="tabpanel" aria-labelledby="heading#{member.parameterized_name}" id="collapse#{member.parameterized_name}"
+                .panel-body
+                  = simple_format(member.presentation)

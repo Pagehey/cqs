@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'association', to: 'pages#association'
   get 'agenda', to: 'pages#agenda'
   get 'ecoasis', to: 'pages#ecoasis'
+  get 'nous-rejoindre', to: 'pages#nous_rejoindre'
   get 'evenements-principaux', to: 'pages#main_events', as: 'main_events'
 
   resources :events, only: [:show], path: 'evenements', param: :slug do
