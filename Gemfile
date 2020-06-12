@@ -13,7 +13,7 @@ gem 'rb-readline'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.0.9'
+gem 'font-awesome-sass', '~> 5.13.0'
 gem 'sassc'
 gem 'simple_form'
 gem 'uglifier'
