@@ -182,6 +182,12 @@ GEM
       addressable (~> 2.7)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     semantic_range (2.3.0)
     simple_form (5.0.2)
       actionpack (>= 5.0)
@@ -253,7 +259,7 @@ DEPENDENCIES
   rb-readline
   redis
   route_translator
-  sassc
+  sassc-rails
   simple_form (>= 5.0.0)
   slim
   spring
