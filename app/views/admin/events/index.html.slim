@@ -10,10 +10,10 @@
   = link_to new_admin_event_path do
     h3#creer Créer
   h5.unread-messages-count
-    - if Participation.unread_by(current_user).size > 0
-      |#{ pluralize Participation.unread_by(current_user).size, 'demande non lue', 'demandes non lues' }
+    - if @unread_participations_count.positive?
+      |#{ pluralize @unread_participations_count, 'demande non lue', 'demandes non lues' }
 .container-fluid
-  - if @events.empty?
+  - if @events.blank?
     h2.text-center Il n'y a pas d'événement programmé pour le moment.
   - else
     .row

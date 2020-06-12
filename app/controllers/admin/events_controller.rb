@@ -5,7 +5,8 @@ module Admin
     before_action :set_event, except: [:index, :new, :create]
 
     def index
-      @events = Event.order(start_date: :desc).includes(:participations)
+      @unread_participations_count = Participation.unread_by(current_user).count
+      @events                      = Event.order(start_date: :desc).includes(:participations)
     end
 
     def show

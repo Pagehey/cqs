@@ -20,7 +20,7 @@ html
 
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     = stylesheet_link_tag 'application', media: 'all'
-  body
+  body class="#{'having-footer' if controller_path.include? 'admin' }"
 
     = render 'shared/flashes'
     = render 'shared/navbar_cqs' unless controller_path.include? 'admin'

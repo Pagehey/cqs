@@ -8,8 +8,11 @@
 body {
   position: relative;
   color: $light-black !important;
-  min-height: 100vh;
-  padding-bottom: 200px;
+
+  .having-footer {
+    min-height: 100vh;
+    padding-bottom: 200px;
+  }
 }
 
 a:hover {
