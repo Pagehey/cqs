@@ -40,21 +40,22 @@
 // PERMACULTURE
 .permaculture {
   position: relative;
-  background-image: asset-url('ecoasis2.jpg');
-  background-position-x: center;
-  background-position-y: 10%;
+  background-image: asset-url('piliers.jpg');
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   height: 600px;
 }
 @media (min-width: 1500) {
 
 }
 .pm-description {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   position: absolute;
   left: 0;
   top: 75px;
   width: 700px;
-  height: 250px;
   padding: 50px;
   background-color: rgba(255, 255, 255, 0.7);
   border-right: 10px solid $sand;
