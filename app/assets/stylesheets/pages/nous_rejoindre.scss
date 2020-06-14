@@ -1,5 +1,7 @@
 .nous-rejoindre {
-  background: center / cover no-repeat linear-gradient(rgba(249, 249, 249, 0.8), rgba(249, 249, 249, 0.8)), asset-url('ecoasis2.jpg');
+  background: linear-gradient(rgba(230, 230, 230, 0.75), rgba(230, 230, 230, 0.75)), asset-url('groupe.jpg');
+  background-size: cover;
+  background-position: center;
   padding-bottom: 32px;
   h1 {
     display: inline-block;
@@ -8,7 +10,7 @@
   .nous-rejoindre-img {
     height: 600px;
     width: 100%;
-    background: center / contain no-repeat asset-url('ecoasis_page.png');
+    background: center / contain no-repeat asset-url('pele_mele.png');
   }
   .nous-rejoindre-header {
     padding: 0 24px;
